@@ -1,10 +1,9 @@
 <!--index.wxml-->
 
 <view class="container">
-<Single/>
-<Single/>
-<Single/>
-<navigator url="../fang/fang">跳转到新页面</navigator>
+
+<view wx:if="{{isRegister}}"> 已注册 </view>
+<view wx:elif="{{!isRegister}}"> 未注册 </view>
 
 <open-data type="groupName" open-gid="xxxxxx"></open-data>
 <open-data type="userAvatarUrl"></open-data>
