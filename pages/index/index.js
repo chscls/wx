@@ -55,8 +55,16 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
+        console.log(this.data.openid)
+        http.getReq("/wx/FyUserSvc/qcodeLogin?qcode=" + res.result+"&openid="+this.data.openid ,
+           res => {
+
+              console.log("网页端扫描登录成功")
+
+
+          })
         this.setData({ qcode: res.result })
-        console.log(res)
+     
       }
     })
   },
@@ -81,6 +89,8 @@ Page({
 
                 if (res.id == null) {
                   this.setData({ isRegister: false, openid: res.openid  })
+                }else{
+                  this.setData({ isRegister:true, openid: res.openid })
                 }
 
               })
