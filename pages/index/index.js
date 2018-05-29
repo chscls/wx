@@ -8,7 +8,8 @@ Page({
     motto: '陈芳颐',
     isRegister:true,
     userInfo:{},
-    openid:''
+    openid:'',
+    qcode:'请扫描'
   },
   getRegisterCode: function () {
    console.log("xxxxxxxxx")
@@ -51,8 +52,13 @@ Page({
   console.log(text)
   },
   setDisabled: function (e) {
-   this.print("xxxxxxxxxxxxx")
-    this.setData({ motto: '陈欢',})
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        this.setData({ qcode: res.result })
+        console.log(res)
+      }
+    })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -68,7 +74,7 @@ Page({
   
         wx.login({
           success: res => {
-            http.postReq("/wx/FyUserSvc/wxcode",
+          http.postReq("/wx/FyUserSvc/wxcode",
               {
                 code: res.code
               }, res => {
