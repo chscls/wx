@@ -55,7 +55,7 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
-        console.log(this.data.openid)
+        //console.log(this.data.openid)
         http.getReq("/wx/FyUserSvc/qcodeLogin?qcode=" + res.result+"&openid="+this.data.openid ,
            res => {
 
