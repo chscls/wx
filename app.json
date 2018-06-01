@@ -25,13 +25,13 @@
       },
       {
         "pagePath": "pages/record/record",
-        "text": "做题",
+        "text": "做题记录",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
       },
       {
         "pagePath": "pages/test/test",
-        "text": "建题",
+        "text": "试卷制作",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
       },
