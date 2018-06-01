@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/record/record",
     "pages/test/test",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/make/make",
+    "pages/do/do"
   ],
   "window": {
     "backgroundTextStyle": "light",

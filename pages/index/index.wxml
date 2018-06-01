@@ -19,10 +19,8 @@
 <open-data type="groupName" open-gid="xxxxxx"></open-data>
 
   <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="setDisabled" hover-class="other-button-hover"> 扫描登录 </button>
-  <view class="usermotto">
-    <text class="user-motto">{{qcode}}</text>
-  </view>
+        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 扫描做题 </button>
+   
   </view>
 
 

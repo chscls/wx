@@ -51,6 +51,16 @@ Page({
   print:function(text){
   console.log(text)
   },
+  doTest: function (e) {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        wx.navigateTo({
+          url: '../do/do',
+        })
+      }
+    })
+  },
   setDisabled: function (e) {
     wx.scanCode({
       onlyFromCamera: true,
