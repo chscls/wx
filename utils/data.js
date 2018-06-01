@@ -163,6 +163,70 @@ function getSkilledData(){
                         price:'¥800',
                         message:'从事美发行业60余年，有丰富经验',
                         distance:'400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
+                    },
+                    {
+                      company: "柔丝妮美容养生馆",
+                      avatar: "../../images/skilledt_img_04.png",
+                      nickname: '黄技师',
+                      price: '¥800',
+                      message: '从事美发行业60余年，有丰富经验',
+                      distance: '400m'
                     }
             ]
     return arr
