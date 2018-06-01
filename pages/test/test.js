@@ -1,66 +1,57 @@
-// pages/test/test.js
+var fileData = require('../../utils/data.js')
+var util = require('../../utils/util')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  // 页面初始数据
   data: {
-  
+    // nav 初始化
+    // cas picker
+    casArray: ['美发', '美容', '美甲', '美睫'],
+    casIndex: 0,
+    // addr picker
+    addrArray: util.replacePhone(fileData.userData().addrs, false),
+    addrIndex: 0,
+    skillData: fileData.getSkilledData(),
+    curNavId: 1,
+    curIndex: 0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function () {
+    var that = this
+    that.setData({
+      list: that.data.skillData
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  // 跳转至详情页
+  navigateDetail: function (e) {
+    wx.navigateTo({
+      url: '../technicain_detail/technicain_detail?artype=' + e.currentTarget.dataset.arid
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  // 加载更多
+  loadMore: function (e) {
+    console.log('加载更多')
+    if (this.data.skillData.length === 0) return
+    var that = this
+    // 由于是模拟数据，加载更多时候，数据重复加载
+    that.data.skillData = that.data.skillData.concat(that.data.skillData)
+    that.setData({
+      list: that.data.skillData,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  // 类别选择
+  bindCasPickerChange: function (e) {
+    console.log('Category picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      casIndex: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  // 地址选择
+  bindAddrPickerChange: function (e) {
+    console.log('Category picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      addrIndex: e.detail.value
+    })
   }
+
+
 })

@@ -32,8 +32,8 @@
       {
         "pagePath": "pages/test/test",
         "text": "试卷制作",
-        "iconPath": "images/ico-setting.png",
-        "selectedIconPath": "images/ico-setting-d.png"
+        "iconPath": "images/edit.png",
+        "selectedIconPath": "images/edit.png"
       },
       {
         "pagePath": "pages/my/my",
