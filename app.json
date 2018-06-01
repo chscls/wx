@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/record/record"
+    "pages/record/record",
+    "pages/test/test",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,18 +23,18 @@
       },
       {
         "pagePath": "pages/record/record",
-        "text": "记录",
+        "text": "做题",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "题库",
+        "pagePath": "pages/test/test",
+        "text": "建题",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
