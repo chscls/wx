@@ -1,87 +1,57 @@
-var url = "http://www.imooc.com/course/ajaxlist";
-var page = 0;
-var page_size = 20;
-var sort = "last";
-var is_easy = 0;
-var lange_id = 0;
-var pos_id = 0;
-var unlearn = 0;
-
-
-// 获取数据的方法，具体怎么获取列表数据大家自行发挥
-var GetList = function (that) {
-  that.setData({
-    hidden: false
-  });
-  wx.request({
-    url: url,
-    data: {
-      page: page,
-      page_size: page_size,
-      sort: sort,
-      is_easy: is_easy,
-      lange_id: lange_id,
-      pos_id: pos_id,
-      unlearn: unlearn
-    },
-    success: function (res) {
-      //console.info(that.data.list);
-      var list = that.data.list;
-      for (var i = 0; i < res.data.list.length; i++) {
-        list.push(res.data.list[i]);
-      }
-      that.setData({
-        list: list
-      });
-      page++;
-      that.setData({
-        hidden: true
-      });
-    }
-  });
-}
+var fileData = require('../../utils/data.js')
+var util = require('../../utils/util')
 Page({
+  // 页面初始数据
   data: {
-    hidden: true,
-    list: [],
-    scrollTop: 0,
-    scrollHeight: 0
+    // nav 初始化
+    // cas picker
+    casArray: ['美发', '美容', '美甲', '美睫'],
+    casIndex: 0,
+    // addr picker
+    addrArray: util.replacePhone(fileData.userData().addrs, false),
+    addrIndex: 0,
+    skillData: fileData.getSkilledData(),
+    curNavId: 1,
+    curIndex: 0
   },
+
   onLoad: function () {
-    //   这里要非常注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        console.info(res.windowHeight);
-        that.setData({
-          scrollHeight: res.windowHeight
-        });
-      }
-    });
+    var that = this
+    that.setData({
+      list: that.data.skillData
+    })
   },
-  onShow: function () {
-    //   在页面展示之后先获取一次数据
-    var that = this;
-    GetList(that);
+  // 跳转至详情页
+  navigateDetail: function (e) {
+    wx.navigateTo({
+      url: '../technicain_detail/technicain_detail?artype=' + e.currentTarget.dataset.arid
+    })
   },
-  bindDownLoad: function () {
-    //   该方法绑定了页面滑动到底部的事件
-    var that = this;
-    GetList(that);
+  // 加载更多
+  loadMore: function (e) {
+    console.log('加载更多')
+    if (this.data.skillData.length === 0) return
+    var that = this
+    // 由于是模拟数据，加载更多时候，数据重复加载
+    that.data.skillData = that.data.skillData.concat(that.data.skillData)
+    that.setData({
+      list: that.data.skillData,
+    })
   },
-  scroll: function (event) {
-    //   该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+  // 类别选择
+  bindCasPickerChange: function (e) {
+    console.log('Category picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      scrollTop: event.detail.scrollTop
-    });
+      casIndex: e.detail.value
+    })
   },
-  refresh: function (event) {
-    //   该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-    page = 0;
+  // 地址选择
+  bindAddrPickerChange: function (e) {
+    console.log('Category picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      list: [],
-      scrollTop: 0
-    });
-    GetList(this)
+      addrIndex: e.detail.value
+    })
   }
+
+
 })

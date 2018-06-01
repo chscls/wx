@@ -20,14 +20,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/ico-home.png",
-        "selectedIconPath": "images/ico-home-d.png"
+        "iconPath": "images/index_icon.png",
+        "selectedIconPath": "images/index_icon_HL.png"
       },
       {
         "pagePath": "pages/record/record",
         "text": "做题记录",
-        "iconPath": "images/ico-setting.png",
-        "selectedIconPath": "images/ico-setting-d.png"
+        "iconPath": "images/skill_icon.png",
+        "selectedIconPath": "images/skill_icon_HL.png"
       },
       {
         "pagePath": "pages/test/test",
@@ -38,8 +38,8 @@
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "images/ico-setting.png",
-        "selectedIconPath": "images/ico-setting-d.png"
+        "iconPath": "images/user_icon.png",
+        "selectedIconPath": "images/user_icon_HL.png"
       }
     ]
   }
