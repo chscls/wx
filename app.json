@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,7 +20,7 @@
         "selectedIconPath": "images/ico-home-d.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/record/record",
         "text": "记录",
         "iconPath": "images/ico-setting.png",
         "selectedIconPath": "images/ico-setting-d.png"
