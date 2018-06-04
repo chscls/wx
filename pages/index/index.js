@@ -52,6 +52,18 @@ Page({
   console.log(text)
   },
   doTest: function (e) {
+
+    wx.requestPayment({
+      'timeStamp': '',
+      'nonceStr': '',
+      'package': '',
+      'signType': 'MD5',
+      'paySign': '',
+      'success': function (res) {
+      },
+      'fail': function (res) {
+      }
+    })
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
