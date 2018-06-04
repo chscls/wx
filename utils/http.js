@@ -1,4 +1,4 @@
-var rootDocment = 'https://www.zymoocs.com';
+var rootDocment = 'https://fang.zymoocs.com';
 var header = {
   'Accept': 'application/json',
   'content-type': 'application/x-www-form-urlencoded',
