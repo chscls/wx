@@ -17,7 +17,7 @@ Page({
 
   onLoad: function () {
     var that = this
-    FyTestSvc.queryTest({start:0,count:10,userId:1},(data)=>{
+    FyTestSvc.queryTest({start:0,count:10},(data)=>{
       that.setData({
         list: data
       })
