@@ -58,9 +58,9 @@ change : change
                     <view class="section_cont_sub">
                         <text>{{item.company}}</text>
                     </view>
-                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}}</text>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}} </text>
                     
-                     <icon type="{{status.change(item.status)}}" size="20" color="green"/>
+                    <icon type="{{status.change(item.status)}}" size="20" color="green"/>
                     </view>
                     <view>{{item.title}}</view>
                 </view>
