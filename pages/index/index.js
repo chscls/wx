@@ -11,6 +11,7 @@ Page({
     openid:'',
     qcode:'请扫描'
   },
+
   getRegisterCode: function () {
    console.log("xxxxxxxxx")
   },
@@ -114,7 +115,7 @@ Page({
                 }else{
                   this.setData({ isRegister:true, openid: res.openid })
                 }
-
+                wx.setStorageSync('token', res.token);
               })
 
             // /this.setData({ isRegister: false })

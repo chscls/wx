@@ -6,6 +6,10 @@ var header = {
   'Authorization': null,
 }
 function request(url,data,cb){
+  var token = wx.getStorageSync('token') 
+  if(token){
+    data={...data,token:token}
+  }
   if (data.method==null){
     
     getReq(url + '?' + stringify(data), cb)
@@ -65,5 +69,6 @@ function postReq(url, data, cb) {
 }
 module.exports = {
   getReq: getReq,
-  postReq: postReq
+  postReq: postReq,
+  request: request
 }  

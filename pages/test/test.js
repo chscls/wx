@@ -1,4 +1,4 @@
-var fileData = require('../../utils/data.js')
+var FyTestSvc = require('../../services/FyTestSvc')
 var util = require('../../utils/util')
 Page({
   // 页面初始数据
@@ -8,18 +8,21 @@ Page({
     casArray: ['美发', '美容', '美甲', '美睫'],
     casIndex: 0,
     // addr picker
-    addrArray: util.replacePhone(fileData.userData().addrs, false),
+    addrArray: util.replacePhone([], false),
     addrIndex: 0,
-    skillData: fileData.getSkilledData(),
+    skillData: [],
     curNavId: 1,
     curIndex: 0
   },
 
   onLoad: function () {
     var that = this
-    that.setData({
-      list: that.data.skillData
+    FyTestSvc.queryTest({start:0,count:10,userId:1},(data)=>{
+      that.setData({
+        list: data
+      })
     })
+    
   },
   // 跳转至详情页
   navigateDetail: function (e) {
@@ -33,9 +36,11 @@ Page({
     if (this.data.skillData.length === 0) return
     var that = this
     // 由于是模拟数据，加载更多时候，数据重复加载
-    that.data.skillData = that.data.skillData.concat(that.data.skillData)
-    that.setData({
-      list: that.data.skillData,
+   // that.data.skillData = that.data.skillData.concat(that.data.skillData)
+    FyTestSvc.queryTest({ start: 0, count: 10, userId: 1 }, (data) => {
+      that.setData({
+        list: data
+      })
     })
   },
   // 类别选择
