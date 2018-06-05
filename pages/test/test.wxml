@@ -7,6 +7,24 @@ return "自由"
 }
 return "未知"
 }
+
+module.exports = {
+change : change 
+}
+</wxs>
+<wxs module="status">
+var change = function (status) {
+if(status=="create"){
+return "download"
+}else if(status=="process"){
+return "waiting"
+}else if(status=="complete"){
+return "success"
+}
+
+return "warn"
+}
+
 module.exports = {
 change : change 
 }
@@ -40,7 +58,10 @@ change : change
                     <view class="section_cont_sub">
                         <text>{{item.company}}</text>
                     </view>
-                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}}</text></view>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}}</text>
+                    
+                     <icon type="{{status.change(item.status)}}" size="20" color="green"/>
+                    </view>
                     <view>{{item.title}}</view>
                 </view>
                 <!--book-->
