@@ -1,11 +1,16 @@
 var FyTestSvc = require('../../services/FyTestSvc')
 var util = require('../../utils/util')
+
 Page({
   // 页面初始数据
   data: {
     // nav 初始化
     // cas picker
-   
+    sercherStorage: [],
+
+    inputValue: "",             //搜索框输入的值  
+
+    StorageFlag: true,         //显示搜索记录标志位
     casArray: ['美发', '美容', '美甲', '美睫'],
     casIndex: 0,
     // addr picker
@@ -15,8 +20,10 @@ Page({
     curNavId: 1,
     curIndex: 0
   },
- 
+
+
   onLoad: function () {
+    
     var that = this
     FyTestSvc.queryTest({start:0,count:10},(data)=>{
       that.setData({
@@ -57,7 +64,11 @@ Page({
     this.setData({
       addrIndex: e.detail.value
     })
+  },
+wxSearchTab: function () {
+    wx.redirectTo({
+      url: '../search/search'
+    })
   }
-
 
 })

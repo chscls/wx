@@ -6,7 +6,8 @@
     "pages/test/test",
     "pages/my/my",
     "pages/make/make",
-    "pages/do/do"
+    "pages/do/do",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
