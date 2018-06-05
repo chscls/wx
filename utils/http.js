@@ -1,8 +1,17 @@
+var stringify = require('../libs/stringify.js');
 var rootDocment = 'https://fang.zymoocs.com';
 var header = {
   'Accept': 'application/json',
   'content-type': 'application/x-www-form-urlencoded',
   'Authorization': null,
+}
+function request(url,data,cb){
+  if (data.method==null){
+    
+    getReq(url + '?' + stringify(data), cb)
+  }else{
+    postReq(url, data, cb)
+  }
 }
 function getReq(url, cb) {
   wx.showLoading({
