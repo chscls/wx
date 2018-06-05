@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "做题页面",
+  "usingComponents": {
+    "Single": "../../components/Single/Single"
+  }
+}

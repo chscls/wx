@@ -1,0 +1,9 @@
+<!--pages/do/do.wxml-->
+
+<view> 
+<text>名称:{{testRecord.title}}</text>
+<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 下一题 </button>
+
+        
+ </view>

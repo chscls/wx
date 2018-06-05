@@ -18,15 +18,7 @@ change : change
 <text>题数:{{test.count}} </text>
  <text>模式:{{mode.change(test.mode)}} </text>
 
-  <block wx:for="{{test.questions}}" wx:key="item.id">
-            <view data-aid="{{item.id}}">
-                <!--image-->
-               {{index+1}}
-                </view>
-           
-           
-            
-        </block>
+ <text>描述:{{test.description}} </text>
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
 
