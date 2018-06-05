@@ -1,4 +1,4 @@
-var stringify = require('../libs/stringify.js');
+var stringify = require('../libs/qs/stringify.js');
 var rootDocment = 'https://fang.zymoocs.com';
 var header = {
   'Accept': 'application/json',
