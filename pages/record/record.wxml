@@ -1,27 +1,48 @@
 <!--technician.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<wxs module="mode">
+var change = function (mode) {
+if(mode=="free"){
+return "自由"
+}
+return "未知"
+}
 
+module.exports = {
+change : change 
+}
+</wxs>
+<wxs module="status">
+var change = function (status) {
+if(status=="create"){
+return "download"
+}else if(status=="process"){
+return "waiting"
+}else if(status=="complete"){
+return "success"
+}
+
+return "warn"
+}
+
+module.exports = {
+change : change 
+}
+</wxs>
 <view class="container">
-<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
-  <!--category picker-->
-  <view class="ar_picker" style="background:#fff">
-    <view class="ar_picker_wrap">
-        <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
-            <view>
-                <text>{{casArray[casIndex]}}</text>
-            </view>
-        </picker>
+<view class="weui-search-bar" style="width: 100%">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input"  disabled='true' placeholder="搜索入口" bindtap="wxSearchTab"/>
     </view>
   </view>
+</view>
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <!--category picker-->
+ 
   <!--address picker-->
-  <view class="ar_picker">
-     <view class="ar_picker_wrap">
-        <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
-            <view>
-                <text>{{addrArray[addrIndex]}}</text>
-            </view>
-        </picker>
-     </view>
-  </view>
+ 
   <!--list-->
   <view class="nav_section">
     <view wx:if="{{list}}">
@@ -29,24 +50,23 @@
             <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
                 <!--image-->
                 <view class="section_image" >
-                <block wx:if="{{item.avatar}}">
-                    <image src="{{item.avatar}}" mode="aspectFill"></image>
-                </block>
-                <block wx:else>
-                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
-                </block>
+            <image wx:if="{{item.isQuestionnaire}}" src="../../images/date.png"></image>
+            <image wx:if="{{!item.isQuestionnaire}}" src="../../images/edit.png"></image>
                 </view>
                 <!--content-->
                 <view class="section_cont" >
                     <view class="section_cont_sub">
                         <text>{{item.company}}</text>
                     </view>
-                    <view class="section_cont_price" style="color:#000">{{item.nickname}}<text class="section_cont_price">  {{item.price}}</text></view>
-                    <view>{{item.message}}</view>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}} </text>
+                    
+                    <icon type="{{status.change(item.status)}}" size="20" color="green"/>
+                    </view>
+                    <view>{{item.title}}</view>
                 </view>
                 <!--book-->
                 <view class="section_book" >
-                        <view>{{item.distance}}</view>
+                        <view>模式:{{mode.change(item.mode)}}</view>
                 </view>
             </view>
             
