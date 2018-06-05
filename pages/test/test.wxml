@@ -1,5 +1,16 @@
 <!--technician.wxml-->
-
+<wxs src="../../utils/util.wxs" module="util" />
+<wxs module="mode">
+var change = function (mode) {
+if(mode=="free"){
+return "自由"
+}
+return "未知"
+}
+module.exports = {
+change : change 
+}
+</wxs>
 <view class="container">
 <scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
   <!--category picker-->
@@ -13,15 +24,7 @@
     </view>
   </view>
   <!--address picker-->
-  <view class="ar_picker">
-     <view class="ar_picker_wrap">
-        <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
-            <view>
-                <text>{{addrArray[addrIndex]}}</text>
-            </view>
-        </picker>
-     </view>
-  </view>
+ 
   <!--list-->
   <view class="nav_section">
     <view wx:if="{{list}}">
@@ -29,24 +32,20 @@
             <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
                 <!--image-->
                 <view class="section_image" >
-                <block wx:if="{{item.avatar}}">
-                    <image src="{{item.avatar}}" mode="aspectFill"></image>
-                </block>
-                <block wx:else>
-                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
-                </block>
+            <image wx:if="{{item.isQuestionnaire}}" src="../../images/date.png"></image>
+            <image wx:if="{{!item.isQuestionnaire}}" src="../../images/edit.png"></image>
                 </view>
                 <!--content-->
                 <view class="section_cont" >
                     <view class="section_cont_sub">
                         <text>{{item.company}}</text>
                     </view>
-                    <view class="section_cont_price" style="color:#000">{{item.nickname}}<text class="section_cont_price">  {{item.price}}</text></view>
-                    <view>{{item.message}}</view>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}}</text></view>
+                    <view>{{item.title}}</view>
                 </view>
                 <!--book-->
                 <view class="section_book" >
-                        <view>{{item.distance}}</view>
+                        <view>模式:{{mode.change(item.mode)}}</view>
                 </view>
             </view>
             

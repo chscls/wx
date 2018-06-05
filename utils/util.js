@@ -10,6 +10,11 @@ function formatTime(date) {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+function timestampToTime(timestamp) {
+  console.log(timestamp)
+  var date = new Date(timestamp); 
+  formatTime(date)
+}
 
 function formatNumber(n) {
   n = n.toString()
@@ -32,5 +37,6 @@ function replacePhone(arr, isreplace) {
 }
 module.exports = {
   formatTime: formatTime,
-  replacePhone: replacePhone
+  replacePhone: replacePhone,
+  timestampToTime: timestampToTime
 }

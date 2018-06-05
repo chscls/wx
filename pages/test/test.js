@@ -5,6 +5,7 @@ Page({
   data: {
     // nav 初始化
     // cas picker
+   
     casArray: ['美发', '美容', '美甲', '美睫'],
     casIndex: 0,
     // addr picker
@@ -14,7 +15,7 @@ Page({
     curNavId: 1,
     curIndex: 0
   },
-
+ 
   onLoad: function () {
     var that = this
     FyTestSvc.queryTest({start:0,count:10},(data)=>{

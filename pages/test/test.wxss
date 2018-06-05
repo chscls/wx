@@ -82,8 +82,8 @@
     background:#ddd;
 }
 .nav_section_items .section_image{
-    width:170rpx;
-    height:158rpx;
+    width:60rpx;
+    height:60rpx;
 }
 .nav_section_items .section_image image{
     width:100%;
