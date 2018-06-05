@@ -1,4 +1,4 @@
-var FyTestSvc = require('../../services/FyTestSvc')
+var FyTestRecordSvc = require('../../services/FyTestRecordSvc')
 var util = require('../../utils/util')
 
 Page({
@@ -25,7 +25,7 @@ Page({
   onLoad: function () {
 
     var that = this
-    FyTestSvc.queryTest({ start: 0, count: 10 }, (data) => {
+    FyTestRecordSvc.queryTestRecord({ start: 0, count: 10 }, (data) => {
       that.setData({
         list: data
       })
