@@ -37,7 +37,7 @@ Page({
     // do your job here
     // 跳转
     wx.switchTab({
-      url: '../test/test'
+      url: '../record/record'
     })
   }
 
