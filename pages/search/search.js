@@ -36,8 +36,8 @@ Page({
   myGobackFunction: function () {
     // do your job here
     // 跳转
-    wx.redirectTo({
-      url: '../test/test?searchValue=返回'  
+    wx.switchTab({
+      url: '../test/test'
     })
   }
 

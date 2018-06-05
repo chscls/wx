@@ -66,6 +66,7 @@ Page({
     })
   },
 wxSearchTab: function () {
+  
     wx.redirectTo({
       url: '../search/search'
     })
