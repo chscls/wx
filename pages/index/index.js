@@ -68,8 +68,9 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
+      
         wx.navigateTo({
-          url: '../do/do',
+          url: '../do/do?code=' + res.result,
         })
       }
     })

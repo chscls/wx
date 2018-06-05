@@ -1,11 +1,12 @@
 // pages/do/do.js
+const FyTestSvc = require('../../services/FyTestSvc')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    test:{}
   },
 
   /**
@@ -13,6 +14,9 @@ Page({
    */
   onLoad: function (options) {
   
+    FyTestSvc.findTest(options,(data)=>{
+      this.setData({test:data});
+    })
   },
 
   /**
