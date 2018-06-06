@@ -12,23 +12,24 @@ function request(url,data,cb){
   }
   if (data.method==null){
     
-    getReq(url + '?' + stringify(data), cb)
+    getReq(url,data, cb)
   }else{
     postReq(url, data, cb)
   }
 }
-function getReq(url, cb) {
+function getReq(url, data, cb) {
   wx.showLoading({
     title: '加载中',
   })
   wx.request({
-    url: rootDocment + url,
+    url: rootDocment + url + '?' + stringify(data),
     method: 'get',
     header: header,
     success: function (res) {
       if (res.statusCode == 401) {
-        doLogin(() => {
-          postReq(url, data, cb)
+        doLogin((token) => {
+          data = { ...data, token: token }
+          getReq(url,data, cb)
         })
         return
       }
@@ -55,7 +56,7 @@ function doLogin(back){
         }, res => {
 
           wx.setStorageSync('token', res.token);
-          back()
+          back(res.token)
         
         })
 
@@ -77,6 +78,7 @@ function postReq(url, data, cb) {
       success: function (res) {
         if (res.statusCode == 401) {
           doLogin(()=>{
+            data = { ...data, token: token }
             postReq(url, data, cb)
           })
           return
