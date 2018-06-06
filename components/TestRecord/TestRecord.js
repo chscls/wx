@@ -19,7 +19,7 @@ Component({
    */
   methods: {
     viewDatail:function(e){
-    console.log("xxxxxxxxxxx")
+      this.triggerEvent('viewDatail', {item:this.data.item}) // 只会触发 pageEventListener2
     }
   }
 })

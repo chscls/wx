@@ -21,7 +21,9 @@ Page({
       this.setData({...data});
     })
   },
-
+  viewDatail:function(e){
+    console.log(e.detail)
+  },
   doTest:function(e) {
     wx.navigateTo({
       url: 'question?code=' + this.data.test.code,

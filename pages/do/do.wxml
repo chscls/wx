@@ -24,7 +24,7 @@
 
 <text wx:if="{{records.length>0}}">已做记录</text>
   <block wx:for="{{records}}" wx:key="item.id">
-    <testRecord item="{{item}}" />
+    <testRecord item="{{item}}" bindviewDatail="viewDatail"/>
 
   </block>
   <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>
