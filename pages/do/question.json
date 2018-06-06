@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "做题页面",
   "usingComponents": {
-    "single": "../../components/single/single"
+    "single": "../../components/single/single",
+    "mutiply": "../../components/mutiply/mutiply"
   }
 }
