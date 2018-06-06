@@ -25,7 +25,10 @@ Page({
   },
  
   navigateDetail: function (e) {
-    console.log(e.detail)
+    
+    wx.navigateTo({
+      url: 'question?recordId=' + e.detail.item.id,
+    })
   },
   doTest:function(e) {
     wx.navigateTo({
