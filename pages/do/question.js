@@ -40,9 +40,7 @@ Page({
     })
 
   },
-  change:function(record){
-
-  },
+  
   pre: function () {
     var length = this.data.testRecord.questions.length
     if (this.data.current == 0) {
@@ -63,7 +61,7 @@ Page({
   next:function(){
     var length = this.data.testRecord.questions.length
     if (this.data.current + 1 >= length){
-     
+     console.log(this.data.answers)
       return
     }
   
@@ -78,7 +76,11 @@ Page({
   },
 
   change:function(e){
-    console.log(e.detail)
+   console.log(e.detail)
+    var a = this.data.answers
+    a[e.detail.index] = e.detail.value
+    this.setData({ answers:a})
+    wx.setStorageSync(this.data.testRecord.code, a);
   }
  
 })

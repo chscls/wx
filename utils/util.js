@@ -36,7 +36,7 @@ function replacePhone(arr, isreplace) {
   return newAddr
 }
 function  changeToAnswer(testRecord){
-  console.log(testRecord)
+  
 var a =[]
 for(var i=0;i<testRecord.questions.length;i++){
   var q = testRecord.questions[i]
@@ -46,7 +46,7 @@ for(var i=0;i<testRecord.questions.length;i++){
     a.push([])
   }
 }
-console.log(a)
+
   return a;
 
 }
