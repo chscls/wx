@@ -61,7 +61,11 @@ Page({
   next:function(){
     var length = this.data.testRecord.questions.length
     if (this.data.current + 1 >= length){
-     console.log(this.data.answers)
+      FyTestRecordSvc.submit({ answers:JSON.stringify(this.data.answers),id:this.data.testRecord.id},(data)=>{
+        var b = util.changeToAnswer(data)
+        wx.setStorageSync(data.code, b);
+        this.setData({ testRecord: data, answers: b });
+      });
       return
     }
   
@@ -76,7 +80,7 @@ Page({
   },
 
   change:function(e){
-   console.log(e.detail)
+   
     var a = this.data.answers
     a[e.detail.index] = e.detail.value
     this.setData({ answers:a})

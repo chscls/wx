@@ -6,7 +6,11 @@ function queryTestRecord(params,cb) {
 function addTestRecord(params, cb) {
   http.request(base + "/addTestRecord", params, cb)
 }
+function submit(params, cb) {
+  http.request(base + "/submit", {...params,method:"POST"}, cb)
+}
 module.exports = {
   queryTestRecord: queryTestRecord,
-  addTestRecord: addTestRecord
+  addTestRecord: addTestRecord,
+  submit:submit
 }  

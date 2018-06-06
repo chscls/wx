@@ -20,7 +20,12 @@ Component({
    */
   methods: {
     checkboxChange:function(e){
-      this.triggerEvent('change', { index:this.data.index,value: e.detail }) // 只会触发 pageEventListener2
+      var c = e.detail.value;
+      var b=[];
+      for(var i=0;i<c.length;i++){
+        b.push(parseInt(c[i]))
+      }
+      this.triggerEvent('change', { index: this.data.index, value:b }) // 只会触发 pageEventListener2
     }
   }
 })
