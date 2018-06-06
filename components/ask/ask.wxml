@@ -1,2 +1,9 @@
 <!--components/Single.wxml-->
-<text>{{question.title}}</text>
+
+
+    <view> 
+   
+     <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入答案" />
+     </view>
+
+
