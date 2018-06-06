@@ -1,1 +1,2 @@
 /* pages/do/do.wxss */
+@import "../record/record.wxss";

@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    test:{}
+    test:{},
+    testRecords: [],
+    isAllow:false,
+    isMore:false
   },
 
   /**
@@ -15,7 +18,7 @@ Page({
   onLoad: function (options) {
   
     FyTestSvc.findTest(options,(data)=>{
-      this.setData({test:data});
+      this.setData({...data});
     })
   },
 

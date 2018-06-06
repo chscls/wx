@@ -19,8 +19,35 @@ change : change
  <text>模式:{{mode.change(test.mode)}} </text>
 
  <text>描述:{{test.description}} </text>
-<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+<button wx:if="{{isAllow}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
 
-        
+
+<view>
+   <block wx:for="{{testRecords}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <!--image-->
+                <view class="section_image" >
+            <image wx:if="{{item.isQuestionnaire}}" src="../../images/date.png"></image>
+            <image wx:if="{{!item.isQuestionnaire}}" src="../../images/edit.png"></image>
+                </view>
+                <!--content-->
+                <view class="section_cont" >
+                    <view class="section_cont_sub">
+                        <text>{{item.company}}</text>
+                    </view>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 分数:{{item.score}} </text>
+                    
+                    <icon type="{{status.change(item.status)}}" size="20" color="green"/>
+                    </view>
+                    <view>{{item.title}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" >
+                        <view>模式:{{mode.change(item.mode)}}</view>
+                </view>
+            </view>
+            
+        </block>
+      </view>  
  </view>
