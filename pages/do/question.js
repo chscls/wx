@@ -18,8 +18,19 @@ Page({
   onLoad: function (options) {
    var that = this;
     FyTestRecordSvc.addTestRecord(options, (data) => {
-     
-      this.setData({ testRecord: data, });
+      if (data.status =="create"){
+       
+        var q = wx.getStorageSync(data.code);
+        if(q){
+       
+          this.setData({ testRecord: q });
+        } else{
+          wx.setStorageSync(data.code, data);
+          this.setData({ testRecord: data });
+        }
+      }else{
+      this.setData({ testRecord: data });
+      }
       wx.setNavigationBarTitle({
         title:(that.data.current+1) + "/" + data.questions.length 
       })
