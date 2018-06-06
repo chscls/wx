@@ -1,7 +1,7 @@
 <!--components/Single.wxml-->
 <wxs src="../../utils/util.wxs" module="util" />
 <checkbox-group bindchange="checkboxChange">
-  <label class="checkbox" wx:for="{{question.items}}">
+  <label class="checkbox" wx:for="{{question.items}}" wx:key="{{question.id}}">
     <view><checkbox value="{{index}}" checked="{{item.checked}}"/>{{util.numberToChar(index) }}.
     
     <text wx:if="{{!item.isRich}}">{{item.content}}</text>

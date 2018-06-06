@@ -3,7 +3,7 @@
 
     <view>
 <radio-group class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{question.items}}">
+  <label class="radio" wx:for="{{question.items}}" wx:key="{{question.id}}">
     <view> <radio value="{{index}}" />
     {{util.numberToChar(index) }}.
     
