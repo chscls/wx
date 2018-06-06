@@ -7,7 +7,7 @@ Page({
    */
   data: {
     test:{},
-    testRecords: [],
+    records: [],
     isAllow:false,
     isMore:false
   },

@@ -23,8 +23,8 @@ change : change
         disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
 
 
-<view>
-   <block wx:for="{{testRecords}}" wx:key="item.id">
+
+   <block wx:for="{{records}}" wx:key="item.id">
             <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
                 <!--image-->
                 <view class="section_image" >
@@ -49,5 +49,7 @@ change : change
             </view>
             
         </block>
-      </view>  
+    <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>
+
  </view>
