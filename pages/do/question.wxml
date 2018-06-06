@@ -3,16 +3,27 @@
 <view> 
 <text>名称:{{testRecord.title}}</text>
 
-<view wx:if="{{currentQuestion.type=='single'}}">
-<single question="{{currentQuestion}}"/>
+<view wx:if="{{testRecord.questions[current].type=='single'}}">
+<single question="{{testRecord.questions[current]}}"/>
 </view>
-<view wx:if="{{currentQuestion.type=='mutiply'}}">
-<mutiply question="{{currentQuestion}}"/>
+<view wx:elif="{{testRecord.questions[current].type=='mutiply'}}">
+<mutiply question="{{testRecord.questions[current]}}"/>
 
 </view>
+<view wx:elif="{{testRecord.questions[current].type=='judge'}}">
+<judge question="{{testRecord.questions[current]}}"/>
 
+</view>
+<view wx:elif="{{testRecord.questions[current].type=='fill'}}">
+<fill question="{{testRecord.questions[current]}}"/>
+
+</view>
+<view wx:else>
+<ask question="{{currentQuestion}}"/>
+
+</view>
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 下一题 </button>
+        disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> 下一题 </button>
 
         
  </view>

@@ -8,7 +8,6 @@ Page({
   data: {
     testRecord:{},
     current:1,
-    currentQuestion:{},
     total:0
   },
 
@@ -19,7 +18,7 @@ Page({
    var that = this;
     FyTestRecordSvc.addTestRecord(options, (data) => {
      
-      this.setData({ testRecord: data, total: data.questions.length, currentQuestion: data.questions[0]});
+      this.setData({ testRecord: data, total: data.questions.length});
       wx.setNavigationBarTitle({
         title: that.data.current + "/" + that.data.total 
       })
@@ -27,11 +26,11 @@ Page({
 
   },
   next:function(){
-    if(current>=total){
+    if(this.data.current>=this.data.total){
       return
     }
     var current=this.data.current+1
-    this.setData({ current: current, currentQuestion: data.questions[current] });
+    this.setData({ current: current});
   }
  
 })

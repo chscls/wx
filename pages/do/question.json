@@ -2,6 +2,9 @@
   "navigationBarTitleText": "做题页面",
   "usingComponents": {
     "single": "../../components/single/single",
-    "mutiply": "../../components/mutiply/mutiply"
+    "mutiply": "../../components/mutiply/mutiply",
+    "ask": "../../components/ask/ask",
+    "fill": "../../components/fill/fill",
+    "judge": "../../components/judge/judge"
   }
 }
