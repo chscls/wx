@@ -9,7 +9,8 @@
     "pages/do/do",
     "pages/test/search",
     "pages/record/search",
-    "pages/do/question"
+    "pages/do/question",
+    "pages/card/card"
   ],
   "window": {
     "backgroundTextStyle": "light",

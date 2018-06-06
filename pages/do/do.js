@@ -9,7 +9,9 @@ Page({
     test:{},
     records: [],
     isAllow:false,
-    isMore:false
+    isMore:false,
+    isNew:true,
+    total:0
   },
 
   /**

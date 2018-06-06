@@ -13,20 +13,21 @@
 </wxs>
 <view>
   <text>名称:{{test.title}}</text>
-  <text wx:if="{{test.isQuestionnaire}}">类型:问卷 </text>
+  <view><text wx:if="{{test.isQuestionnaire}}">类型:问卷 </text>
   <text wx:if="{{!test.isQuestionnaire}}">类型:试卷 </text>
   <text>题数:{{test.count}} </text>
   <text>模式:{{mode.change(test.mode)}} </text>
 
   <text>描述:{{test.description}} </text>
-  <button wx:if="{{isAllow}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
+  </view>
+  <button wx:if="{{isAllow}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> {{isNew?"开始答题":"重新答题"}} </button>
 
-
-<text wx:if="{{records.length>0}}">已做记录</text>
+<view  wx:if="{{records.length>0}}">
+<text>已做记录 共计:{{total}}</text>
   <block wx:for="{{records}}" wx:key="item.id">
     <testRecord item="{{item}}" bindnavigateDetail="navigateDetail"/>
 
   </block>
   <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>
-
+</view>
 </view>
