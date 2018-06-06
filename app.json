@@ -10,7 +10,8 @@
     "pages/test/search",
     "pages/record/search",
     "pages/do/question",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/store/store"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,6 +34,13 @@
         "iconPath": "images/skill_icon.png",
         "selectedIconPath": "images/skill_icon_HL.png"
       },
+      {
+        "pagePath": "pages/test/test",
+        "text": "试卷超市",
+        "iconPath": "images/edit.png",
+        "selectedIconPath": "images/edit.png"
+      },
+      
       {
         "pagePath": "pages/test/test",
         "text": "试卷制作",

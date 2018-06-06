@@ -103,7 +103,10 @@ Page({
       success: res=> {
         console.log(res.userInfo)
         this.setData({"userInfo": res.userInfo})
-  
+        var x = wx.getStorageSync("openid")
+        if(x){
+          this.setData({ isRegister: true, openid: x })
+        }else{
         wx.login({
           success: res => {
           http.postReq("/wx/FyUserSvc/wxcode",
@@ -117,12 +120,14 @@ Page({
                   this.setData({ isRegister:true, openid: res.openid })
                 }
                 wx.setStorageSync('token', res.token);
+                wx.setStorageSync('openid', res.openid);
               })
 
             // /this.setData({ isRegister: false })
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
           }
         })
+      }
       }
     })
     
