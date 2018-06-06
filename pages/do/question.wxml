@@ -1,7 +1,8 @@
 <!--pages/do/do.wxml-->
 
 <view> 
-
+<text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
+<rich-text wx:if="{{testRecord.questions[current].isRich}}" nodes="{{testRecord.questions[current].title}}" ></rich-text>
 <view wx:if="{{testRecord.questions[current].type=='single'}}">
 <single question="{{testRecord.questions[current]}}"/>
 </view>
