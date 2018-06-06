@@ -20,7 +20,7 @@ Component({
    */
   methods: {
     inputChange: function (e) {
-      console.log(e)
+      this.triggerEvent('change', { index: this.data.index, value: e.detail.value }) // 只会触发 pageEventListener2
     }
   }
 })
