@@ -8,6 +8,7 @@ Page({
   data: {
     testRecord:{},
     current:0,
+    btn:"下一题"
    
   },
 
@@ -26,11 +27,20 @@ Page({
 
   },
   next:function(){
-    if (this.data.current + 1 >this.data.questions.length){
+    var length = this.data.testRecord.questions.length
+    if (this.data.current + 1 >= length){
+     
       return
     }
+  
+   
     var current=this.data.current+1
-    this.setData({ current: current});
+    this.setData({
+      current: current, btn: current + 1 == length?"提交":"下一题" });
+      
+    wx.setNavigationBarTitle({
+      title: (current + 1) + "/" + length
+    })
   }
  
 })

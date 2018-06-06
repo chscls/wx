@@ -2,7 +2,7 @@
 
 <view> 
 <text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
-<rich-text wx:if="{{testRecord.questions[current].isRich}}" nodes="{{testRecord.questions[current].title}}" ></rich-text>
+<rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
 <view wx:if="{{testRecord.questions[current].type=='single'}}">
 <single question="{{testRecord.questions[current]}}"/>
 </view>
@@ -23,7 +23,7 @@
 
 </view>
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> 下一题 </button>
+        disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
 
         
  </view>

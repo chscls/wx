@@ -2,7 +2,14 @@
 <wxs src="../../utils/util.wxs" module="util" />
 <checkbox-group bindchange="checkboxChange">
   <label class="checkbox" wx:for="{{question.items}}">
-    <view><checkbox value="{{index}}" checked="{{item.checked}}"/>{{util.numberToChar(index) }}.{{item.content}}</view>
+    <view><checkbox value="{{index}}" checked="{{item.checked}}"/>{{util.numberToChar(index) }}.
+    
+    <text wx:if="{{!item.isRich}}">{{item.content}}</text>
+<rich-text wx:else nodes="{{item.content}}" ></rich-text>
+    
+    
+    
+    </view>
   </label>
 </checkbox-group>
 
