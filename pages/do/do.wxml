@@ -1,34 +1,32 @@
 <!--pages/do/do.wxml-->
 <wxs module="mode">
-var change = function (mode) {
-if(mode=="free"){
-return "自由"
-}
-return "未知"
-}
+  var change = function(mode) {
+    if (mode == "free") {
+      return "自由"
+    }
+    return "未知"
+  }
 
-module.exports = {
-change : change 
-}
+  module.exports = {
+    change: change
+  }
 </wxs>
-<view> 
-<text>名称:{{test.title}}</text>
-<text wx:if="{{test.isQuestionnaire}}">类型:问卷 </text>
-<text wx:if="{{!test.isQuestionnaire}}">类型:试卷 </text>
-<text>题数:{{test.count}} </text>
- <text>模式:{{mode.change(test.mode)}} </text>
+<view>
+  <text>名称:{{test.title}}</text>
+  <text wx:if="{{test.isQuestionnaire}}">类型:问卷 </text>
+  <text wx:if="{{!test.isQuestionnaire}}">类型:试卷 </text>
+  <text>题数:{{test.count}} </text>
+  <text>模式:{{mode.change(test.mode)}} </text>
 
- <text>描述:{{test.description}} </text>
-<button wx:if="{{isAllow}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
-
+  <text>描述:{{test.description}} </text>
+  <button wx:if="{{isAllow}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 开始答题 </button>
 
 
-   <block wx:for="{{records}}" wx:key="item.id">
-           <TestRecord item="{{item}}"/>
-            
-        </block>
-    <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>
+<text wx:if="{{records.length>0}}">已做记录</text>
+  <block wx:for="{{records}}" wx:key="item.id">
+    <testRecord item="{{item}}" />
 
- </view>
+  </block>
+  <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>
+
+</view>

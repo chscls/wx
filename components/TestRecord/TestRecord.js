@@ -18,6 +18,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    viewDatail:function(e){
+    console.log("xxxxxxxxxxx")
+    }
   }
 })

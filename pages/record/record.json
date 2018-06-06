@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "做题记录",
   "usingComponents": {
-    "TestRecord": "../../components/TestRecord/TestRecord"
+    "testRecord": "../../components/testRecord/testRecord"
   
   }
 }
