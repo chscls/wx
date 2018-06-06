@@ -35,17 +35,17 @@
         "selectedIconPath": "images/skill_icon_HL.png"
       },
       {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/store/store",
         "text": "试卷超市",
-        "iconPath": "images/edit.png",
-        "selectedIconPath": "images/edit.png"
+        "iconPath": "images/time.png",
+        "selectedIconPath": "images/time.png"
       },
       
       {
         "pagePath": "pages/test/test",
         "text": "试卷制作",
-        "iconPath": "images/edit.png",
-        "selectedIconPath": "images/edit.png"
+        "iconPath": "images/date.png",
+        "selectedIconPath": "images/date.png"
       },
       {
         "pagePath": "pages/my/my",
