@@ -1,5 +1,6 @@
 // pages/do/do.js
 const FyTestRecordSvc = require('../../services/FyTestRecordSvc')
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
    */
   data: {
     testRecord:{},
+    answers:[],
     current:0,
     btn:"下一题",
    btn2: ""
@@ -20,13 +22,14 @@ Page({
     FyTestRecordSvc.addTestRecord(options, (data) => {
       if (data.status =="create"){
        
-        var q = wx.getStorageSync(data.code);
-        if(q){
+        var a = wx.getStorageSync(data.code);
+        if(a){
        
-          this.setData({ testRecord: q });
+          this.setData({ testRecord: data, answers:a });
         } else{
-          wx.setStorageSync(data.code, data);
-          this.setData({ testRecord: data });
+          var b = util.changeToAnswer(data)
+          wx.setStorageSync(data.code, b);
+          this.setData({ testRecord: data ,answers: b });
         }
       }else{
       this.setData({ testRecord: data });
@@ -35,6 +38,9 @@ Page({
         title:(that.data.current+1) + "/" + data.questions.length 
       })
     })
+
+  },
+  change:function(record){
 
   },
   pre: function () {

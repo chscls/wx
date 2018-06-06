@@ -35,8 +35,23 @@ function replacePhone(arr, isreplace) {
 
   return newAddr
 }
+function  changeToAnswer(testRecord){
+var a =[]
+for(var i=0;i<testRecord.questions.length;i++){
+  var q = testRecord.questions[i]
+  if(q.type=="single"||q.type=="judge"||q.type=="ask"){
+    a.push(null)
+  }else{
+    a.push([])
+  }
+}
+console.log(a)
+  return a;
+
+}
 module.exports = {
   formatTime: formatTime,
   replacePhone: replacePhone,
-  timestampToTime: timestampToTime
+  timestampToTime: timestampToTime,
+  changeToAnswer: changeToAnswer
 }
