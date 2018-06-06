@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "试卷制作"
+  "navigationBarTitleText": "试卷制作",
+  "usingComponents": {
+    
+    "testItem": "../../components/testItem/testItem"
+  }
 }

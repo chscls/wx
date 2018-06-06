@@ -25,7 +25,7 @@
 <view  wx:if="{{records.length>0}}">
 <text>已做记录 共计:{{total}}</text>
   <block wx:for="{{records}}" wx:key="item.id">
-    <testRecord item="{{item}}" bindnavigateDetail="navigateDetail"/>
+    <testRecordItem item="{{item}}" bindnavigateDetail="navigateDetail"/>
 
   </block>
   <button wx:if="{{isMore}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 更多 </button>

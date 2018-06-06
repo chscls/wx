@@ -2,6 +2,6 @@
   "navigationBarTitleText": "做题页面",
   "usingComponents": {
     "single": "../../components/single/single",
-    "testRecord": "../../components/testRecord/testRecord"
+    "testRecordItem": "../../components/testRecordItem/testRecordItem"
   }
 }

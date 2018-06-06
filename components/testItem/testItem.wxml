@@ -1,0 +1,53 @@
+<!--components/test/test.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<wxs module="mode">
+var change = function (mode) {
+if(mode=="free"){
+return "自由"
+}
+return "未知"
+}
+
+module.exports = {
+change : change 
+}
+</wxs>
+<wxs module="status">
+var change = function (status) {
+if(status=="create"){
+return "download"
+}else if(status=="process"){
+return "waiting"
+}else if(status=="complete"){
+return "success"
+}
+
+return "warn"
+}
+
+module.exports = {
+change : change 
+}
+</wxs>
+   <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <!--image-->
+                <view class="section_image" >
+            <image wx:if="{{item.isQuestionnaire}}" src="../../images/date.png"></image>
+            <image wx:if="{{!item.isQuestionnaire}}" src="../../images/edit.png"></image>
+                </view>
+                <!--content-->
+                <view class="section_cont" >
+                    <view class="section_cont_sub">
+                        <text>{{item.company}}</text>
+                    </view>
+                    <view class="section_cont_price" style="color:#000">{{util.timestampToTime(item.createTime)}}<text class="section_cont_price"> 题数:{{item.count}} </text>
+                    
+                    <icon type="{{status.change(item.status)}}" size="20" color="green"/>
+                    </view>
+                    <view>{{item.title}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" >
+                        <view>模式:{{mode.change(item.mode)}}</view>
+                </view>
+            </view>

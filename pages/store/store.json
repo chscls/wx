@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "试卷超市"
+  "navigationBarTitleText": "试卷超市",
+  "usingComponents": {
+    "testItem": "../../components/testItem/testItem"
+  }
 }
