@@ -8,8 +8,8 @@ Page({
   data: {
     testRecord:{},
     current:0,
-    btn:"下一题"
-   
+    btn:"下一题",
+   btn2: ""
   },
 
   /**
@@ -26,6 +26,23 @@ Page({
     })
 
   },
+  pre: function () {
+    var length = this.data.testRecord.questions.length
+    if (this.data.current == 0) {
+
+      return
+    }
+
+
+    var current = this.data.current - 1
+    this.setData({
+      current: current, btn: current + 1 == length ? "提交" : "下一题", btn2: current == 0 ? "" : "上一题"
+    });
+
+    wx.setNavigationBarTitle({
+      title: (current + 1) + "/" + length
+    })
+  },
   next:function(){
     var length = this.data.testRecord.questions.length
     if (this.data.current + 1 >= length){
@@ -36,7 +53,7 @@ Page({
    
     var current=this.data.current+1
     this.setData({
-      current: current, btn: current + 1 == length?"提交":"下一题" });
+      current: current, btn: current + 1 == length ? "提交" : "下一题", btn2: current == 0 ? "" : "上一题"});
       
     wx.setNavigationBarTitle({
       title: (current + 1) + "/" + length

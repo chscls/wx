@@ -24,6 +24,8 @@
 </view>
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
+<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="pre" hover-class="other-button-hover"> {{btn2}}</button>
 
         
  </view>
