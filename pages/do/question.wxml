@@ -4,18 +4,18 @@
 <text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
 <rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
 <view wx:if="{{testRecord.questions[current].type=='single'}}">
-<single question="{{testRecord.questions[current]}}"/>
+<single question="{{testRecord.questions[current]}}" index="{{index}}" bindchange="change"/>
 </view>
 <view wx:elif="{{testRecord.questions[current].type=='mutiply'}}">
-<mutiply question="{{testRecord.questions[current]}}"/>
+<mutiply question="{{testRecord.questions[current]}}" index="{{index}}" bindchange="change"/>
 
 </view>
 <view wx:elif="{{testRecord.questions[current].type=='judge'}}">
-<judge question="{{testRecord.questions[current]}}"/>
+<judge question="{{testRecord.questions[current]}}" index="{{index}}" bindchange="change"/>
 
 </view>
 <view wx:elif="{{testRecord.questions[current].type=='fill'}}">
-<fill question="{{testRecord.questions[current]}}"/>
+<fill question="{{testRecord.questions[current]}}" index="{{index}}" bindchange="change"/>
 
 </view>
 <view wx:else>

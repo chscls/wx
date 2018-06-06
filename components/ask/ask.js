@@ -4,7 +4,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    question: Object
+    question: Object,
+    index: Number
   },
 
   /**
@@ -18,6 +19,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    inputChange: function (e) {
+      console.log(e)
+    }
   }
 })

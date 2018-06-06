@@ -69,6 +69,10 @@ Page({
     wx.setNavigationBarTitle({
       title: (current + 1) + "/" + length
     })
+  },
+
+  change:function(e){
+    console.log(e.detail)
   }
  
 })

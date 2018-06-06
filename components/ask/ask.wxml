@@ -3,7 +3,7 @@
 
     <view> 
    
-     <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入答案" />
+     <textarea bindblur="bindTextAreaBlur" bindinput="inputChange"  auto-height placeholder="请输入答案" />
      </view>
 
 

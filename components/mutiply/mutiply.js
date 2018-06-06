@@ -4,7 +4,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    question: Object
+    question: Object,
+    index:Number
   },
 
   /**
@@ -19,7 +20,7 @@ Component({
    */
   methods: {
     checkboxChange:function(e){
-        console.log(e)
+      this.triggerEvent('change', { index:this.data.index,value: e.detail }) // 只会触发 pageEventListener2
     }
   }
 })
