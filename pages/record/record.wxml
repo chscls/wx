@@ -18,7 +18,7 @@
   <view class="nav_section">
     <view wx:if="{{list}}">
         <block wx:for="{{list}}" wx:key="item.id">
-           <testRecord item="{{item}}" />
+           <testRecord item="{{item}}" navigateDetail="navigateDetail"/>
         </block>
     </view>
     

@@ -18,8 +18,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    viewDatail:function(e){
-      this.triggerEvent('viewDatail', {item:this.data.item}) // 只会触发 pageEventListener2
+    navigateDetail:function(e){
+      this.triggerEvent('navigateDetail', {item:this.data.item}) // 只会触发 pageEventListener2
     }
   }
 })

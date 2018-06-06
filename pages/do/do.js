@@ -21,7 +21,8 @@ Page({
       this.setData({...data});
     })
   },
-  viewDatail:function(e){
+ 
+  navigateDetail: function (e) {
     console.log(e.detail)
   },
   doTest:function(e) {
