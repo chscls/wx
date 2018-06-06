@@ -1,2 +1,8 @@
 <!--components/Single.wxml-->
-<text>{{question.title}}</text>
+<wxs src="../../utils/util.wxs" module="util" />
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{question.items}}">
+    <view><checkbox value="{{index}}" checked="{{item.checked}}"/>{{util.numberToChar(index) }}.{{item.content}}</view>
+  </label>
+</checkbox-group>
+
