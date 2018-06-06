@@ -1,7 +1,6 @@
 <!--pages/do/do.wxml-->
 
 <view> 
-<text>名称:{{testRecord.title}}</text>
 
 <view wx:if="{{testRecord.questions[current].type=='single'}}">
 <single question="{{testRecord.questions[current]}}"/>
