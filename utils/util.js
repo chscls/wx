@@ -41,12 +41,45 @@ var a =[]
 for(var i=0;i<testRecord.questions.length;i++){
   var q = testRecord.questions[i]
   if(q.type=="single"||q.type=="judge"){
-    a.push(-1)
+    var items = q.items
+    var x = 0;
+    for(var j=0;j<items.length;j++){
+      if (items[j].isAnswer != null && items[j].isAnswer){
+        a.push(j)
+        x++;
+        break
+      }
+    }
+    if(x==0){
+      a.push(-1)
+    }
+    
+  } else if (q.type == "mutiply") {
+    var x =[]
+    var items = q.items
+    for (var j = 0; j < items.length; j++) {
+      if (items[j].isAnswer != null && items[j].isAnswer) {
+        x.push(j)
+      
+      }
+    }
+    a.push(x)
+
+
   } else if (q.type == "ask"){
-    a.push("")
+
+    a.push(items[0].answer != null ? items[0].answer:"")
+  
     
   }else{
-    a.push([])
+    var x = []
+    var items = q.items
+
+    for (var j = 0; j < items.length; j++) {
+      x.push(items[0].answer)
+    }
+    a.push(x)
+   
   }
 }
 
