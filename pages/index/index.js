@@ -7,7 +7,7 @@ Page({
   data: {
     motto: '陈芳颐',
     isRegister:true,
-    userInfo:{},
+  
     openid:'',
     qcode:'请扫描'
   },
@@ -99,10 +99,7 @@ Page({
     })
   },
   onLoad: function () {
-    wx.getUserInfo({
-      success: res=> {
-        console.log(res.userInfo)
-        this.setData({"userInfo": res.userInfo})
+
         var x = wx.getStorageSync("openid")
         if(x){
           this.setData({ isRegister: true, openid: x })
@@ -129,7 +126,7 @@ Page({
         })
       }
       }
-    })
+ 
     
-  }
+  
 })

@@ -2,6 +2,6 @@
   "navigationBarTitleText": "智兔©",
   "component": false,
   "usingComponents": {
-    "Single":"../../components/Single/Single"
+    "single":"../../components/single/single"
   }
 }
