@@ -1,4 +1,4 @@
-var xx=['A','B','C','D','E','F'];
+var xx=['A','B','C','D','E','F','G','F','E','H','I','J','K','L','M','N','O'];
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -19,7 +19,7 @@ var  timestampToTime =  function (time) {
   
 }
 var numberToChar=function(index){
-  if(index>=5){
+  if(index>=26){
     return index
   }
   return xx[index]
