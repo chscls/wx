@@ -24,7 +24,18 @@ var numberToChar=function(index){
   }
   return xx[index]
 }
+var contain = function (array, index) {
+  var b = false;
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] == index) {
+      b = true;
+      break;
+    }
+  }
+  return b;
+}
 module.exports = {
   timestampToTime: timestampToTime,
-  numberToChar: numberToChar
+  numberToChar: numberToChar,
+  contain: contain
 }

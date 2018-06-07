@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     question: Object,
-    index: Number
+    index: Number,
+    answer:String
   },
 
   /**
