@@ -4,7 +4,7 @@
     <view>
 <radio-group class="radio-group" bindchange="radioChange">
   <label class="radio" wx:for="{{question.items}}" wx:key="{{question.id}}">
-    <view> <radio value="{{index}}" checked="{{answer!=null&&answer==index}}"/>
+    <view> <radio value="{{index}}" checked="{{answer==index}}"/>
     {{util.numberToChar(index) }}.
     
     <text wx:if="{{!item.isRich}}">{{item.content}}</text>
