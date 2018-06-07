@@ -17,18 +17,20 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+
+
   onLoad: function (options) {
    var that = this;
     FyTestRecordSvc.addTestRecord(options, (data) => {
       if (data.status =="create"){
        
-        var a = wx.getStorageSync(data.code);
+        var a = wx.getStorageSync(data.uuid);
         if(a){
        
           this.setData({ testRecord: data, answers:a });
         } else{
           var b = util.changeToAnswer(data)
-          wx.setStorageSync(data.code, b);
+          wx.setStorageSync(data.uuid, b);
           this.setData({ testRecord: data ,answers: b });
         }
       }else{
@@ -37,6 +39,7 @@ Page({
       wx.setNavigationBarTitle({
         title:(that.data.current+1) + "/" + data.questions.length 
       })
+     console.log(this.data.answers)
     })
 
   },
@@ -63,9 +66,7 @@ Page({
     var length = this.data.testRecord.questions.length
     if (this.data.current + 1 >= length){
       FyTestRecordSvc.submit({ answers:JSON.stringify(this.data.answers),id:this.data.testRecord.id},(data)=>{
-       var b = util.changeToAnswer(data)
-        wx.setStorageSync(data.code, b);
-        this.setData({ testRecord: data, answers: b });
+       wx.removeStorageSync(data.uuid)
         wx.navigateBack({
           
         })

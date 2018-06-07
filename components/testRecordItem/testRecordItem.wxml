@@ -49,5 +49,5 @@ change : change
                 <view class="section_book" >
                         <view>模式:{{mode.change(item.mode)}}</view>
                 </view>
-              <button  type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 继续 </button>
+              <button  type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 查看 </button>
             </view>

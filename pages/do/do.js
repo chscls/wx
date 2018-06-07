@@ -1,5 +1,6 @@
 // pages/do/do.js
 const FyTestSvc = require('../../services/FyTestSvc')
+var optionsTemp;
 Page({
 
   /**
@@ -11,19 +12,23 @@ Page({
     isAllow:false,
     isMore:false,
     isNew:true,
-    total:0
+    total:0,
+    options:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-    FyTestSvc.findTest(options,(data)=>{
-      this.setData({...data});
-    })
+   optionsTemp=options;
   },
- 
+  onShow: function () {
+    FyTestSvc.findTest(optionsTemp, (data) => {
+      this.setData({ ...data });
+    })
+
+
+  },
   navigateDetail: function (e) {
     
     wx.navigateTo({

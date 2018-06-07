@@ -40,8 +40,11 @@ function  changeToAnswer(testRecord){
 var a =[]
 for(var i=0;i<testRecord.questions.length;i++){
   var q = testRecord.questions[i]
-  if(q.type=="single"||q.type=="judge"||q.type=="ask"){
-    a.push(null)
+  if(q.type=="single"||q.type=="judge"){
+    a.push(-1)
+  } else if (q.type == "ask"){
+    a.push("")
+    
   }else{
     a.push([])
   }
