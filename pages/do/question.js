@@ -63,9 +63,12 @@ Page({
     var length = this.data.testRecord.questions.length
     if (this.data.current + 1 >= length){
       FyTestRecordSvc.submit({ answers:JSON.stringify(this.data.answers),id:this.data.testRecord.id},(data)=>{
-        var b = util.changeToAnswer(data)
+       var b = util.changeToAnswer(data)
         wx.setStorageSync(data.code, b);
         this.setData({ testRecord: data, answers: b });
+        wx.navigateBack({
+          
+        })
       });
       return
     }
