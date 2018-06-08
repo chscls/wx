@@ -34,7 +34,7 @@ Page({
           this.setData({ testRecord: data, answers: b });
         }
       } else {
-        console.log("xxxxxxx")
+       
         var b = util.changeToAnswer(data)
         this.setData({ testRecord: data, answers: b });
       }
@@ -82,7 +82,6 @@ Page({
       return
     }
 
-    console.log(this.data.answers)
     var current = this.data.current + 1
     this.setData({
       current: current, btn: current + 1 == length ? this.data.testRecord.status == "create" ? "提交" : "返回" : "下一题", btn2: current == 0 ? "" : "上一题"
