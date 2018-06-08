@@ -1,12 +1,14 @@
-<view class="wxgrid">
-    <view wx:for="{{wxgrid.rows}}" wx:for-index="i" class="wxrow">
-        <view wx:for="{{wxgrid.cols}}" wx:for-index="j" class="wxcol" style="width:{{item.width}}%;">
-            <a class="wxclassify" href="#">
-                <image class="wxclassify-img" mode="aspectFit" src="{{wxgrid.data.classifies[i][j].img}}"></image>
-                {{wxgrid.data.classifies[i][j].name}}
-            </a>
-        </view>
-    </view>
-     <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="close" hover-class="other-button-hover"> 关闭</button>      
+<view class="parent">
+
+  <block wx:for="{{list}}" wx:key="item.id">
+           <view class="child" bindtap='click' id="{{index}}" >{{index+1}}</view>
+        </block>
+   
+  
 </view>
+
+
+   <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="close" hover-class="other-button-hover"> 关闭</button>      
+    
+

@@ -109,6 +109,17 @@ Page({
 
   close :function(e) {
     this.setData({ isCard: false })
+  },
+
+  click  :function(e) {
+    var length = this.data.testRecord.questions.length
+    
+    var current = e.detail.index
+    this.setData({
+      isCard: false ,
+      current: current, btn: current + 1 == length ? this.data.testRecord.status == "create" ? "提交" : "返回" : "下一题", btn2: current == 0 ? "" : "上一题"
+    });
+  
   }
 
 })

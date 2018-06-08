@@ -1,7 +1,7 @@
 <!--pages/do/do.wxml-->
  
 
-<card wx:if="{{isCard}}" bindclose="close"/>
+<card wx:if="{{isCard}}" list="{{testRecord.questions}}" bindclick='click'  bindclose="close"/>
  
  
  <view wx:else> 

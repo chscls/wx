@@ -1,2 +1,18 @@
-/* pages/card/card.wxss */
-@import "../../libs/wxgrid/wxgrid.wxss";
+.parent {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.child {
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 25%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 50%;
+  text-align: center
+}
