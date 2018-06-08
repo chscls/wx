@@ -1,1 +1,2 @@
 /* pages/card/card.wxss */
+@import "../../libs/wxgrid/wxgrid.wxss";

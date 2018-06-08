@@ -101,6 +101,13 @@ Page({
     a[e.detail.index] = e.detail.value
     this.setData({ answers: a })
     wx.setStorageSync(this.data.testRecord.code, a);
+  },
+
+  card:function (e) {
+
+  wx.navigateTo({
+    url: '../card/card',
+  })
   }
 
 })
