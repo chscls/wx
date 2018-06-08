@@ -21,8 +21,7 @@ Page({
     curIndex: 0
   },
 
-
-  onLoad: function () {
+  onShow: function () {
 
     var that = this
     FyTestRecordSvc.queryTestRecord({ start: 0, count: 10 }, (data) => {
@@ -30,6 +29,11 @@ Page({
         list: data
       })
     })
+
+  },
+  onLoad: function () {
+
+   
 
   },
   // 跳转至详情页

@@ -21,15 +21,19 @@ Page({
     curIndex: 0
   },
 
+  onShow: function () {
 
-  onLoad: function () {
-    
     var that = this
-    FyTestSvc.queryTest({start:0,count:10},(data)=>{
+    FyTestSvc.queryTest({ start: 0, count: 10 }, (data) => {
       that.setData({
         list: data
       })
     })
+
+  },
+  onLoad: function () {
+    
+    
     
   },
   // 跳转至详情页
