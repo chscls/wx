@@ -5,6 +5,7 @@
     "mutiply": "../../components/mutiply/mutiply",
     "ask": "../../components/ask/ask",
     "fill": "../../components/fill/fill",
-    "judge": "../../components/judge/judge"
+    "judge": "../../components/judge/judge",
+    "card": "../../components/card/card"
   }
 }

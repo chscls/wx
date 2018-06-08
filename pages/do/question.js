@@ -11,7 +11,8 @@ Page({
     answers: [],
     current: 0,
     btn: "下一题",
-    btn2: ""
+    btn2: "",
+    isCard:false
   },
 
   /**
@@ -103,10 +104,11 @@ Page({
   },
 
   card:function (e) {
+      this.setData({isCard:true})
+  },
 
-  wx.navigateTo({
-    url: '../card/card',
-  })
+  close :function(e) {
+    this.setData({ isCard: false })
   }
 
 })

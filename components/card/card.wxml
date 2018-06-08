@@ -7,4 +7,6 @@
             </a>
         </view>
     </view>
+     <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="close" hover-class="other-button-hover"> 关闭</button>      
 </view>

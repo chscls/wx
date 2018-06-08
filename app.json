@@ -10,7 +10,6 @@
     "pages/test/search",
     "pages/record/search",
     "pages/do/question",
-    "pages/card/card",
     "pages/store/store"
   ],
   "window": {
