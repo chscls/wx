@@ -114,11 +114,15 @@ Page({
   click  :function(e) {
     var length = this.data.testRecord.questions.length
     
-    var current = e.detail.index
+    var current = parseInt(e.detail.index)
     this.setData({
       isCard: false ,
       current: current, btn: current + 1 == length ? this.data.testRecord.status == "create" ? "提交" : "返回" : "下一题", btn2: current == 0 ? "" : "上一题"
     });
+
+    wx.setNavigationBarTitle({
+      title: (current + 1) + "/" + length
+    })
   
   }
 
