@@ -3,25 +3,23 @@
 <view> 
 <text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
 <rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
-<view wx:if="{{testRecord.questions[current].type=='single'}}">
-<single question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
-</view>
-<view wx:elif="{{testRecord.questions[current].type=='mutiply'}}">
-<mutiply question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
 
-</view>
-<view wx:elif="{{testRecord.questions[current].type=='judge'}}">
-<judge question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
+<single wx:if="{{testRecord.questions[current].type=='single'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
 
-</view>
-<view wx:elif="{{testRecord.questions[current].type=='fill'}}">
-<fill question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
 
-</view>
-<view wx:else>
-<ask question="{{currentQuestion}}"/>
+<mutiply wx:elif="{{testRecord.questions[current].type=='mutiply'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
 
-</view>
+
+<judge wx:elif="{{testRecord.questions[current].type=='judge'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
+
+
+
+<fill  wx:elif="{{testRecord.questions[current].type=='fill'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
+
+
+
+<ask wx:else question="{{currentQuestion}}"/>
+
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"

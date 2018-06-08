@@ -34,8 +34,9 @@ Page({
   
   // 跳转至详情页
   navigateDetail: function (e) {
+
     wx.navigateTo({
-      url: '../technicain_detail/technicain_detail?artype=' + e.currentTarget.dataset.arid
+      url: '../do/question?recordId=' + e.detail.item.id,
     })
   },
   // 加载更多

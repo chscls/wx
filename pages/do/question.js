@@ -41,7 +41,7 @@ Page({
       wx.setNavigationBarTitle({
         title: (that.data.current + 1) + "/" + data.questions.length
       })
-      console.log(this.data.answers)
+    
     })
 
   },

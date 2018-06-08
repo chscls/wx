@@ -5,7 +5,7 @@
   <label class="fill" wx:for="{{question.items}}" wx:key="{{question.id}}">
     <view> 
    
-     空{{index+1}}.<input id="{{index}}" value="{{answer[index]}}" bindinput="inputChange" placeholder="请输入答案" auto-focus/>
+     空{{index+1}}.<input id="{{index}}" value="{{answer[index]}}" bindinput="inputChange" placeholder="请输入答案" />
      </view>
   </label>
  </view>
