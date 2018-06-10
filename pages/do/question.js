@@ -152,7 +152,7 @@ Page({
     }
     return {
       title: '我的试卷',
-      path: '/page/user?id=123'
+      path: '/pages/do/do?code=' + this.data.testRecord.code,
     }
   }
 })
