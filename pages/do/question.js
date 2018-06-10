@@ -124,6 +124,23 @@ Page({
       title: (current + 1) + "/" + length
     })
   
+  },
+  print: function (e) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.downloadFile({
+      url: 'http://weimu.zymoocs.com:52059/u/201803/o_0817420960yo.pdf',
+      success: function (res) {
+        var filePath = res.tempFilePath
+        wx.openDocument({
+          filePath: filePath,
+          success: function (res) {
+            wx.hideLoading();
+          
+          }
+        })
+      }
+    })
   }
-
 })
