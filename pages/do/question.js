@@ -129,6 +129,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
+    
     wx.downloadFile({
       url: 'http://weimu.zymoocs.com:52059/u/201803/o_0817420960yo.pdf',
       success: function (res) {
@@ -136,11 +137,22 @@ Page({
         wx.openDocument({
           filePath: filePath,
           success: function (res) {
-            wx.hideLoading();
+            wx.hideLoading(); 
+            console.log(res)
           
           }
         })
       }
     })
+  },
+   onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '我的试卷',
+      path: '/page/user?id=123'
+    }
   }
 })
