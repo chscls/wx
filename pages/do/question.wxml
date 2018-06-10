@@ -30,6 +30,8 @@
         disabled="{{disabled}}" bindtap="pre" hover-class="other-button-hover"> {{btn2}}</button>
 
   <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="card" hover-class="other-button-hover"> 答题卡</button>      
+        disabled="{{disabled}}" bindtap="card" hover-class="other-button-hover"> 答题卡</button>    
+        <button wx:if="{{testRecord.status=='complete'}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="card" hover-class="other-button-hover"> 打印试卷</button>        
  </view>
 
