@@ -40,4 +40,15 @@ Page({
       url: 'question?code=' + this.data.test.code,
     })
   }
+  ,
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '我的试卷',
+      path: '/pages/do/do?code=' + this.data.test.code,
+    }
+  }
 })
