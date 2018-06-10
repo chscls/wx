@@ -131,7 +131,7 @@ Page({
     })
     
     wx.downloadFile({
-      url: 'http://weimu.zymoocs.com:52059/u/201803/o_0817420960yo.pdf',
+      url: 'https://www.zymoocs.com/services/FyTestRecordSvc/printRecord/' + this.data.testRecord.uuid+'.pdf',
       success: function (res) {
         var filePath = res.tempFilePath
         wx.openDocument({
