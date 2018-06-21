@@ -37,10 +37,12 @@ Page({
     
   },
   // 跳转至详情页
+  // 跳转至详情页
   navigateDetail: function (e) {
     wx.navigateTo({
-      url: '../technicain_detail/technicain_detail?artype=' + e.currentTarget.dataset.arid
+      url: '../do/do?code=' + e.detail.item.code,
     })
+
   },
   // 加载更多
   loadMore: function (e) {

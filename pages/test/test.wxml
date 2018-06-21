@@ -19,7 +19,7 @@
     <view wx:if="{{list}}">
         <block wx:for="{{list}}" wx:key="item.id">
          
-            <testItem item="{{item}}"/>
+            <testItem item="{{item}}" bindnavigateDetail="navigateDetail"/>
         </block>
     </view>
     
