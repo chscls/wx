@@ -21,7 +21,7 @@ Component({
    */
   methods: {
     radioChange: function (e) {
-      this.triggerEvent('change', { index: this.data.index, value: parseInt(e.detail.value) }) // 只会触发 pageEventListener2
+      this.triggerEvent('change', { index: this.data.index, value: {indexs:[parseInt(e.detail.value)]} }) // 只会触发 pageEventListener2
     }
   }
 })

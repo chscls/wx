@@ -25,7 +25,7 @@ Component({
         var value=this.data.value
         value[id]=e.detail.value
         this.setData({ value: value })
-        this.triggerEvent('change', { index: this.data.index, value: value }) // 只会触发 pageEventListener2
+        this.triggerEvent('change', { index: this.data.index, value:{answers: value} }) // 只会触发 pageEventListener2
     }
   },
   attached: function () {

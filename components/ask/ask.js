@@ -21,7 +21,7 @@ Component({
    */
   methods: {
     inputChange: function (e) {
-      this.triggerEvent('change', { index: this.data.index, value: e.detail.value }) // 只会触发 pageEventListener2
+      this.triggerEvent('change', { index: this.data.index, value: {answers:[e.detail.value]} }) // 只会触发 pageEventListener2
     }
   }
 })
