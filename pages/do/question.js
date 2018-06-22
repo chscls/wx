@@ -12,7 +12,11 @@ Page({
     current: 0,
     btn: "下一题",
     btn2: "",
-    isCard: false
+    isCard: false,
+    defaultAnswer:{
+      indexs:[],
+      answers:[]
+    }
   },
 
   /**

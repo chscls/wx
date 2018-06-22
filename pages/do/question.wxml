@@ -8,21 +8,21 @@
 <text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
 <rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
 
-<single wx:if="{{testRecord.questions[current].type=='single'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
+<single wx:if="{{testRecord.questions[current].type=='single'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
 
-<mutiply wx:elif="{{testRecord.questions[current].type=='mutiply'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
+<mutiply wx:elif="{{testRecord.questions[current].type=='mutiply'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
 
-<judge wx:elif="{{testRecord.questions[current].type=='judge'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
-
-
-
-<fill  wx:elif="{{testRecord.questions[current].type=='fill'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}"  bindchange="change"/>
+<judge wx:elif="{{testRecord.questions[current].type=='judge'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
 
 
 
-<ask wx:else question="{{currentQuestion}}"/>
+<fill  wx:elif="{{testRecord.questions[current].type=='fill'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
+
+
+
+<ask wx:else question="{{currentQuestion}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"/>
 
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
