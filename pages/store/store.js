@@ -22,7 +22,7 @@ Page({
   },
 
 
-  onLoad: function () {
+  onShow: function () {
     
     var that = this
     FyTestSvc.queryTest({start:0,count:10,isSale:true},(data)=>{

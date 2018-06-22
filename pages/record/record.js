@@ -21,7 +21,7 @@ Page({
     curIndex: 0
   },
 
-  onLoad: function () {
+  onShow: function () {
 
     var that = this
     FyTestRecordSvc.queryTestRecord({ start: 0, count: 10 }, (data) => {
