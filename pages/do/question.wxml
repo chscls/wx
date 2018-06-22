@@ -1,7 +1,16 @@
+<!--pages/do/do.wxml-->
+ 
 
+<card wx:if="{{isCard}}" list="{{testRecord.questions}}" bindclick='click'  bindclose="close"/>
+ 
+ 
+ <view wx:else> 
+<text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
+<rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
 
-<form bindsubmit="formSubmit" bindreset="formReset">
 <single wx:if="{{testRecord.questions[current].type=='single'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
+
+
 <mutiply wx:elif="{{testRecord.questions[current].type=='mutiply'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]}}" bindchange="change"/>
 
 
@@ -15,8 +24,14 @@
 
 <ask wx:else question="{{currentQuestion}}"/>
 
-  <view class="btn-area">
-    <button formType="submit">Submit</button>
-    <button formType="reset">Reset</button>
-  </view>
-</form>
+<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
+<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="pre" hover-class="other-button-hover"> {{btn2}}</button>
+
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="card" hover-class="other-button-hover"> 答题卡</button>    
+        <button wx:if="{{testRecord.status=='complete'}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="print" hover-class="other-button-hover"> 打印试卷</button>        
+ </view>
+
