@@ -6,7 +6,7 @@ Component({
   properties: {
     question: Object,
     index: Number,
-    answer:Number
+    answer: Object
   },
 
   /**
