@@ -70,7 +70,7 @@ Page({
       success: (res) => {
       
         wx.navigateTo({
-          url: '../do/do?code=' + res.result,
+          url: '../do/do?id=' + res.result,
         })
       }
     })

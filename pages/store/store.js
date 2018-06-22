@@ -35,7 +35,7 @@ Page({
   // 跳转至详情页
   navigateDetail: function (e) {
     wx.navigateTo({
-      url: '../do/do?code=' + e.detail.item.code,
+      url: '../do/do?id=' + e.detail.item.id,
     })
   
   },

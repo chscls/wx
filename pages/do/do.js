@@ -37,7 +37,7 @@ Page({
   },
   doTest:function(e) {
     wx.navigateTo({
-      url: 'question?code=' + this.data.test.code,
+      url: 'question?id=' + this.data.test.id,
     })
   }
   ,
