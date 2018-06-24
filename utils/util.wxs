@@ -25,7 +25,7 @@ var numberToChar=function(index){
   return xx[index]
 }
 var contain = function (array, index) {
-  console.log(index)
+  
   var b = false;
   if (array == null) {
     return b
