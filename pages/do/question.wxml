@@ -1,24 +1,24 @@
 <!--pages/do/do.wxml-->
  
 
-<card wx:if="{{isCard}}" list="{{testRecord.questions}}" bindclick='click'  bindclose="close"/>
+<card wx:if="{{isCard}}" list="{{testRecord.answers}}" bindclick='click'  bindclose="close"/>
  
  
  <view wx:else> 
-<text wx:if="{{!testRecord.questions[current].isRich}}">{{testRecord.questions[current].title}}</text>
-<rich-text wx:else nodes="{{testRecord.questions[current].title}}" ></rich-text>
+<text wx:if="{{!testRecord.questions[testRecord.answers[current].index].isRich}}">{{testRecord.questions[testRecord.answers[current].index].title}}</text>
+<rich-text wx:else nodes="{{testRecord.questions[testRecord.answers[current].index].title}}" ></rich-text>
 
-<single wx:if="{{testRecord.questions[current].type=='single'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
-
-
-<mutiply wx:elif="{{testRecord.questions[current].type=='mutiply'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
+<single wx:if="{{testRecord.questions[testRecord.answers[current].index].type=='single'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
 
-<judge wx:elif="{{testRecord.questions[current].type=='judge'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
+<mutiply wx:elif="{{testRecord.questions[testRecord.answers[current].index].type=='mutiply'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
+
+
+<judge wx:elif="{{testRecord.questions[testRecord.answers[current].index].type=='judge'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
 
 
 
-<fill  wx:elif="{{testRecord.questions[current].type=='fill'}}" question="{{testRecord.questions[current]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
+<fill  wx:elif="{{testRecord.questions[testRecord.answers[current].index].type=='fill'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
 
 
 

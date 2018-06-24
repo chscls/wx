@@ -21,6 +21,7 @@ Component({
    */
   methods: {
     radioChange: function (e) {
+      console.log(parseInt(e.detail.value))
       this.triggerEvent('change', { index: this.data.index, value: {indexs:[parseInt(e.detail.value)]} }) // 只会触发 pageEventListener2
     }
   }

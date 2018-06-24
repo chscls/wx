@@ -25,14 +25,18 @@ var numberToChar=function(index){
   return xx[index]
 }
 var contain = function (array, index) {
-  console.log(array)
+  console.log(index)
   var b = false;
+  if (array == null) {
+    return b
+  }
   for (var i = 0; i < array.length; i++) {
     if (array[i] == index) {
       b = true;
       break;
     }
   }
+
   return b;
 }
 module.exports = {

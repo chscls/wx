@@ -117,10 +117,12 @@ Page({
   change: function(e) {
 
     var a = this.data.answers
-    a[e.detail.index] = e.detail.value
+    a[e.detail.index].indexs = e.detail.value.indexs
+    a[e.detail.index].answers= e.detail.value.answers
     this.setData({
       answers: a
     })
+  
     wx.setStorageSync(this.data.testRecord.uuid, a);
   },
 

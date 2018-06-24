@@ -1,11 +1,11 @@
 <!--components/Single.wxml-->
 <wxs src="../../utils/util.wxs" module="util" />
 <checkbox-group bindchange="checkboxChange">
-  <label class="checkbox" wx:for="{{question.items}}" wx:key="{{question.id}}">
-    <view><checkbox value="{{index}}" checked="{{util.contain(answer.indexs,index) }}"/>{{util.numberToChar(index) }}.
+  <label class="checkbox" wx:for="{{answer.orders}}" wx:key="{{item}}">
+    <view><checkbox value="{{item}}" checked="{{util.contain(answer.indexs,item) }}"/>{{util.numberToChar(index) }}.
     
-    <text wx:if="{{!item.isRich}}">{{item.content}}</text>
-<rich-text wx:else nodes="{{item.content}}" ></rich-text>
+    <text wx:if="{{!question.items[item].isRich}}">{{question.items[item].content}}</text>
+<rich-text wx:else nodes="{{question.items[item].content}}" ></rich-text>
     
     
     

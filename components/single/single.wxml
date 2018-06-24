@@ -3,12 +3,12 @@
 
     <view>
 <radio-group class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{question.items}}" wx:key="{{question.id}}">
-    <view> <radio value="{{index}}" checked="{{answer.indexs[0]==index}}"/>
+  <label class="radio" wx:for="{{answer.orders}}" wx:key="{{question.id}}">
+    <view> <radio value="{{item}}" checked="{{answer.indexs[0]==item}}"/>
     {{util.numberToChar(index) }}.
     
-    <text wx:if="{{!item.isRich}}">{{item.content}}</text>
-<rich-text wx:else nodes="{{item.content}}" ></rich-text>
+    <text wx:if="{{!question.items[item].isRich}}">{{question.items[item].content}}</text>
+<rich-text wx:else nodes="{{question.items[item].content}}" ></rich-text>
     
      </view>
   </label>
