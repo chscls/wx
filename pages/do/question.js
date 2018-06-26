@@ -115,7 +115,7 @@ Page({
   },
 
   change: function(e) {
-
+    console.log(e.detail.value.answers)
     var a = this.data.answers
     a[e.detail.index].indexs = e.detail.value.indexs
     a[e.detail.index].answers= e.detail.value.answers

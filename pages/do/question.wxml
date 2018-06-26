@@ -22,7 +22,7 @@
 
 
 
-<ask wx:else question="{{currentQuestion}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"/>
+<ask wx:else question="{{currentQuestion}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>
