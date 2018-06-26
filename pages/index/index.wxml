@@ -6,15 +6,13 @@
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
         <text class="weui-icon-search_in-box iconfont icon-sousuo"></text>
-
         <text class="weui-search-bar__input" bindtap="wxSearchTab">我爱做题</text>
         <text bindtap="doTest" class="weui-icon-search_in-box-right iconfont icon-paizhao"></text>
-
       </view>
     </view>
   </view>
   <swiper class="swiper" indicator-color="gray" indicator-active-color="white" indicator-dots="true" autoplay="true" interval="5000" duration="200">
-    <block wx:for="{{movies}}" wx:for-index="index">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:key="{{index}}">
       <swiper-item>
         <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
       </swiper-item>
@@ -23,23 +21,19 @@
 
 
   <view class="menus">
-
     <block wx:for="{{menus}}" wx:key="item.id">
       <view class="menu menu-u-1of3" bindtap='click' id="{{index}}">
       <view><view class='name'> {{item.name}} </view> <view class='ename'> {{item.ename}} </view></view>
-     
-      
-       
-        
-         
       </view>
       <view wx:if="{{(index+1)%3!=0}}" class="menu menu-u-1of2" > / </view>
     </block>
-
-
   </view>
+  <view class="newmembers">
 
-
+  <view class="newmember newmember-u-1of3">新人专属美好</view>
+   <view class="newmember newmember-u-1of2">开启精品学习之旅</view>
+  <view  class="newmember-image" > <image src="../../images/newmember.jpg"  mode="aspectFill" /></view>
+  </view>
 
 
 
