@@ -5,6 +5,14 @@
     padding:0;
     margin:0;
 }
+.swiper {
+  height: 600rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
 .weui-search-bar {
   position: relative;
   padding: 8px 10px;
