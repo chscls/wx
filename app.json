@@ -29,20 +29,20 @@
       },
       {
         "pagePath": "pages/record/record",
-        "text": "做题记录",
+        "text": "记录",
         "iconPath": "images/jilu.png",
         "selectedIconPath": "images/jilu.png"
       },
       {
         "pagePath": "pages/store/store",
-        "text": "试卷超市",
+        "text": "超市",
         "iconPath": "images/chaoshi.png",
         "selectedIconPath": "images/chaoshi.png"
       },
       
       {
         "pagePath": "pages/test/test",
-        "text": "试卷制作",
+        "text": "制作",
         "iconPath": "images/chuti.png",
         "selectedIconPath": "images/chuti.png"
       },
