@@ -6,6 +6,7 @@ const http = require('../../utils/http.js')
 Page({
   
   data: {
+    menus: [{ name: '职场', ename: "Job" }, { name: '大学', ename: "Collage" }, { name: '高中', ename: "Senior High" }, { name: '初中', ename: "Junior High" }, { name: '小学', ename: "Junior" }, { name: '幼儿园', ename: "Kindergarten" } ],
     movies: [
       { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
       { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },

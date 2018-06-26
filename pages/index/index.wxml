@@ -2,38 +2,62 @@
 
 
 <view class="container">
-<view class="weui-search-bar" style="width: 100%">
-  <view class="weui-search-bar__form">
-    <view class="weui-search-bar__box">
-       <text  class="weui-icon-search_in-box iconfont icon-sousuo" ></text> 
+  <view class="weui-search-bar" style="width: 100%">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <text class="weui-icon-search_in-box iconfont icon-sousuo"></text>
 
-      <text class="weui-search-bar__input"  bindtap="wxSearchTab">我爱做题</text>
-      <text bindtap="doTest"  class="weui-icon-search_in-box-right iconfont icon-paizhao" ></text> 
-    
+        <text class="weui-search-bar__input" bindtap="wxSearchTab">我爱做题</text>
+        <text bindtap="doTest" class="weui-icon-search_in-box-right iconfont icon-paizhao"></text>
+
+      </view>
     </view>
   </view>
-</view>
-  <swiper class="swiper" indicator-color="gray" indicator-active-color="white" indicator-dots="true" autoplay="true" interval="5000" duration="200">    
-      <block wx:for="{{movies}}" wx:for-index="index">    
-        <swiper-item>    
-          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
-        </swiper-item>    
-      </block>    
-    </swiper>  
-<form wx:if="{{!isRegister}}" bindsubmit="formSubmit" bindreset="formReset">
-<view class="section">
-    <view class="section__title">姓名</view>
-    <input name="realname" placeholder="请输入真实姓名" />
+  <swiper class="swiper" indicator-color="gray" indicator-active-color="white" indicator-dots="true" autoplay="true" interval="5000" duration="200">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <view class="menus">
+
+    <block wx:for="{{menus}}" wx:key="item.id">
+      <view class="menu menu-u-1of3" bindtap='click' id="{{index}}">
+      <view><view class='name'> {{item.name}} </view> <view class='ename'> {{item.ename}} </view></view>
+     
+      
+       
+        
+         
+      </view>
+      <view wx:if="{{(index+1)%3!=0}}" class="menu menu-u-1of2" > / </view>
+    </block>
+
+
   </view>
 
-   <view class="btn-area">
-    <button formType="submit">提交</button>
-    <button formType="jump">跳过</button>
-  </view>
-</form>
- 
-<view wx:elif="{{isRegister}}">
-<open-data type="groupName" open-gid="xxxxxx"></open-data>
+
+
+
+
+
+  <form wx:if="{{!isRegister}}" bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <view class="section__title">姓名</view>
+      <input name="realname" placeholder="请输入真实姓名" />
+    </view>
+
+    <view class="btn-area">
+      <button formType="submit">提交</button>
+      <button formType="jump">跳过</button>
+    </view>
+  </form>
+
+  <view wx:elif="{{isRegister}}">
+    <open-data type="groupName" open-gid="xxxxxx"></open-data>
 
   </view>
 
