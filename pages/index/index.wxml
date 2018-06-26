@@ -29,9 +29,6 @@
 <view wx:elif="{{isRegister}}">
 <open-data type="groupName" open-gid="xxxxxx"></open-data>
 
-  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="doTest" hover-class="other-button-hover"> 扫描做题 </button>
-   
   </view>
 
 
