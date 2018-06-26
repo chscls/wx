@@ -16,10 +16,7 @@
  
 }
 
-.weui-icon-search {
-  margin-right: 8px;
-  font-size: inherit;
-}
+
 
 .weui-icon-search_in-box {
   color:black;
@@ -37,11 +34,7 @@
   right: 10px;
   top: 10px;
 }
-.weui-search-bar__text {
-  display: inline-block;
-  font-size: 14px;
-  vertical-align: middle;
-}
+
 
 .weui-search-bar__form {
   position: relative;
@@ -65,39 +58,18 @@
 .weui-search-bar__input {
   color:#aaa;
   padding-left: 10px;
+  padding-right: 10px;
   height: 40px;
+  
+  display: block;
   line-height: 40px;
   font-size: 13px;
+
 }
 
-.weui-icon-clear {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 7px 8px;
-  font-size: 0;
-}
 
-.weui-search-bar__label {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  border-radius: 3px;
-  text-align: center;
-  color: #9b9b9b;
-  background: #fff;
-  line-height: 28px;
-}
 
-.weui-search-bar__cancel-btn {
-  margin-left: 10px;
-  line-height: 28px;
-  color: #09bb07;
-  white-space: nowrap;
-}
+
 
 .userinfo {
   display: flex;
