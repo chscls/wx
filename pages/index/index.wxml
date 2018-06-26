@@ -1,7 +1,16 @@
 <!--index.wxml-->
 
-<view>
 
+<view class="container">
+<view class="weui-search-bar" style="width: 100%">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input"  disabled='true' placeholder="我爱做题" bindtap="wxSearchTab"/>
+     <icon bindtap="doTest" class="weui-icon-search_in-box-right" type="search" size="14"></icon>
+    </view>
+  </view>
+</view>
 
 <form wx:if="{{!isRegister}}" bindsubmit="formSubmit" bindreset="formReset">
 <view class="section">

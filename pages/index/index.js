@@ -15,6 +15,12 @@ Page({
   getRegisterCode: function () {
    console.log("xxxxxxxxx")
   },
+  wxSearchTab: function () {
+
+    wx.redirectTo({
+      url: '../record/search'
+    })
+  },
   formSubmit: function (e) {
     if (e.detail.value.realname== ""){
       wx.showModal({
