@@ -5,8 +5,9 @@
 <view class="weui-search-bar" style="width: 100%">
   <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
-      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-      <input type="text" class="weui-search-bar__input"  disabled='true' placeholder="我爱做题" bindtap="wxSearchTab"/>
+       <text  class="weui-icon-search_in-box iconfont icon-sousuo" ></text> 
+
+      <text class="weui-search-bar__input"  bindtap="wxSearchTab">我爱做题</text>
       <text bindtap="doTest"  class="weui-icon-search_in-box-right iconfont icon-paizhao" ></text> 
     
     </view>

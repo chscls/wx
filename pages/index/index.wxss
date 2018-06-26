@@ -24,12 +24,15 @@
 .weui-icon-search_in-box {
   color:black;
   position: absolute;
+   font-size: 20px;
+  font-weight:bold;
   left: 10px;
-  top: 15px;
+  top: 10px;
 }
 .weui-icon-search_in-box-right {
    color:black;
   position: absolute;
+  font-weight:bold;
   font-size: 20px;
   right: 10px;
   top: 10px;
@@ -60,9 +63,11 @@
 }
 
 .weui-search-bar__input {
+  color:#aaa;
+  padding-left: 10px;
   height: 40px;
-  line-height: 28px;
-  font-size: 14px;
+  line-height: 40px;
+  font-size: 13px;
 }
 
 .weui-icon-clear {
