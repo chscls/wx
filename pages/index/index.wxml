@@ -1,7 +1,7 @@
 <!--index.wxml-->
 
 
-<view class="container">
+<scroll-view  scroll-y="true" class="container">
   <view class="weui-search-bar" style="width: 100%">
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
@@ -32,7 +32,7 @@
 
   <view class="newmember newmember-u-1of3">新人专属美好</view>
    <view class="newmember newmember-u-1of2">开启精品学习之旅</view>
-  <view  class="newmember-image" > <image src="../../images/newmember.jpg"  mode="aspectFill" /></view>
+  <image style="padding:10px;width: 100%;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
   </view>
 
 
@@ -56,4 +56,4 @@
   </view>
 
 
-</view>
+</scroll-view>
