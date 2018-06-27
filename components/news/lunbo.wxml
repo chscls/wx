@@ -11,12 +11,30 @@
       <swiper-item>
         <image wx:if="{{index==0}}" src="{{item.url}}" class="slide-image" mode="aspectFill" />
         <view wx:if="{{index>0}}" style="display:flex; flex-flow: row wrap;align-content: flex-start;">
-<view style='height:100px;flex:0 0 33%'>1313</view>
-<view style='height:100px;flex:0 0 33%'>1313</view>
-<view style='height:100px;flex:0 0 33%'>1313</view>
-<view style='height:100px;flex:0 0 33%'>1313</view>
-<view style='height:100px;flex:0 0 33%'>1313</view>
-<view wx:if="{{index==1}}" style='height:100px;flex:0 0 33%'>1313</view>
+<view style='height:100px;flex:0 0 33%'>
+  <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
+<view style='height:100px;flex:0 0 33%'>
+  <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
+<view style='height:100px;flex:0 0 33%'>
+  <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
+<view style='height:100px;flex:0 0 33%'>
+  <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
+<view style='height:100px;flex:0 0 33%'>
+  <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
+<view wx:if="{{index==1}}" style='height:100px;flex:0 0 33%'>
+ <image style="height:50px;width: 100px;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+  <text>1313</text>
+</view>
 <view wx:if="{{index==2}}" style='height:100px;flex:0 0 33%'>更多</view>
         </view>
       </swiper-item>
