@@ -3,24 +3,127 @@
 <view class="container">
   <view class="user_base_info">
     <view class="user_avatar">
-        <image src="{{userData.avatar}}"></image>
+      <image src="{{userData.avatar}}"></image>
     </view>
     <view class="user_info">
       <text style="font-size:25px;font-weight:bold">
       zt1121212111  
       </text>
-        <text style="font-size:13px;"> 普通会员 </text>
+      <text style="font-size:13px;"> 普通会员 </text>
     </view>
-     <view class="user_setting">
-       <text style=' font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text>
+    <view class="user_setting">
+      <text style=' font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text>
     </view>
   </view>
 
- <view class="user_addr_manage">
-    <view class="user_addr_title">待付款</view>
-   <view class="user_addr_title">待收获</view>
-    <view class="user_addr_title">待评价</view>
-     <view class="user_addr_title">全部订单</view>
- </view>
-  
+  <view class="user_addr_manage">
+    <view class="user_addr_title" style='height:60px'>
+      <text style='width:50px; font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text> <text style="text-align:center">待付款</text> 
+    </view>
+    <view class="user_addr_title">
+      <text style='width:50px; font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text> <text style="text-align:center">待收获</text> 
+    </view>
+    <view class="user_addr_title">
+      <text style='width:50px; font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text>  <text style="text-align:center">待评价</text> 
+    </view>
+    <view class="user_addr_title">
+      <text style='width:50px; font-size: 30px;font-weight:bold;' class=" iconfont icon-paizhao"></text>  <text style="text-align:center">全部订单</text> 
+    </view>
+  </view>
+
+
+  <view class="user_menus">
+
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text>  <text style="width:100%;text-align:center">我的积分</text> 
+    </view>
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%;font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+    <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+     <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+     <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+      <view class="user_menu">
+      <text style='margin-top:20px;width:100%; font-size: 20px;color:#d3a809' class=" iconfont icon-paizhao"></text> <text style="width:100%;text-align:center"> 我的积分</text> 
+    </view>
+  </view>
+
+
+
+ <view style="padding-top:10px;">
+   
+      <view >为您挑选</view>
+      <view style="display:flex;padding-top:10px; flex-flow: row wrap;align-content: flex-start;">
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+       <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+        <view style="flex: 0 0 50%;height:100px;">
+          <image style="height:50px;width: 100%" src="../../images/shijuan.png" mode="scaleToFill" />
+          <text>1313</text>
+       
+        </view>
+    </view>
+</view>
 </view>
