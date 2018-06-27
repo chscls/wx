@@ -8,7 +8,8 @@
     width:100%;
     display:flex;
     flex-direction: row;
-    
+    color:white;
+  background-color: black;
     font-size:30rpx;
    
 }
@@ -31,18 +32,23 @@
 }
 .user_base_info .user_info{
     margin-left: 20px;
-    color:#000;
+    
     line-height: 40rpx;
 }
 .user_addr_manage{
+  color:white;
+  background-color: black;
     width:100%;
+     display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
 }
 .user_addr_manage .user_addr_title{
-    padding:10rpx 60rpx;
-    display: block;
+  flex:0 0 25%;
+   
     text-align: center;
     font-size:36rpx;
-    margin-bottom:40rpx;
+    
 }
 .user_addr_manage .user_addr_item{
     width:100%;
