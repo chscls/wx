@@ -35,23 +35,15 @@
   <image style="padding:10px;width: 100%;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
   </view>
 
-<scroll-view  scroll-x="true" class="container" >
-<view  style="display:flex;width:1200px">
-  <view style="width: 400px;height:200px">新人专属美好
-   <image style="padding:10px;width: 400px;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
-  
-  </view>
- <view style="width: 400px;height:200px">新人专属美好
-   <image style="width: 400px;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
-  
-  </view>
-   <view style="width: 400px;height:200px">新人专属美好
-   <image style="width: 400px;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
-  
-  </view>
-
+ <view class="abouts">
+ <view style="flex: 0 0 50%;height:50px;" >
+  <view class="about-u-1of3">走进智兔</view>
+   <view class="about-u-1of2">探索美好></view>
    </view>
-</scroll-view>
+  <image style="flex: 0 0 50%;height:50px;" class="slide-image" mode="aspectFit" src="../../images/shijuan.png" />
+  </view>
+ 
+
   <form wx:if="{{!isRegister}}" bindsubmit="formSubmit" bindreset="formReset">
     <view class="section">
       <view class="section__title">姓名</view>
