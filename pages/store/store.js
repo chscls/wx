@@ -1,75 +1,96 @@
-var FyTestSvc = require('../../services/FyTestSvc')
-var util = require('../../utils/util')
-
 Page({
-  // 页面初始数据
   data: {
-    // nav 初始化
-    // cas picker
-    sercherStorage: [],
+    navLeftItems: [{
+      id: 1,
+      tree: {
 
-    inputValue: "",             //搜索框输入的值  
+        desc: '幼教',
+      },
+    }, {
+      id: 2,
+      tree: {
 
-    StorageFlag: true,         //显示搜索记录标志位
-    casArray: ['美发', '美容', '美甲', '美睫'],
-    casIndex: 0,
-    // addr picker
-    addrArray: util.replacePhone([], false),
-    addrIndex: 0,
-    skillData: [],
-    curNavId: 1,
+        desc: '小学',
+      }
+      }, {
+        id: 3,
+        tree: {
+
+          desc: '初中',
+        }
+    }, {
+      id: 4,
+      tree: {
+
+        desc: '高中',
+      }
+    }, {
+      id: 5,
+      tree: {
+
+        desc: '大学',
+      }
+    }, {
+      id: 6,
+      tree: {
+
+        desc: '职场',
+      }
+    }],
+    navRightItems: [{
+      id: 1,
+      tree: {
+        nodes: [{
+          id: 25,
+          tree: {
+           
+            logo: "../../images/newmember.jpg",
+            desc: 'xxxxxxx',
+            desc2: 'CXXXXXX'
+          },
+        },{
+          id: 26,
+          tree: {
+            
+            logo: "../../images/newmember.jpg",
+            desc: 'xxxxxxx',
+            desc2: 'CXXXXXX'
+          }
+        }]
+      }
+
+    }, {
+      id: 3,
+      tree: {
+        nodes: [{
+          id: 33,
+          tree: {
+
+            logo: "../../images/newmember.jpg",
+            desc: 'xxxxxxx',
+            desc2: 'CXXXXXX'
+          },
+        }]
+      }
+
+    }],
+    curNav: 1,
     curIndex: 0
   },
+  onLoad: function() {
+    // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
 
+  },
 
-  onShow: function () {
-    
-    var that = this
-    FyTestSvc.queryTest({start:0,count:10,isSale:true},(data)=>{
-      that.setData({
-        list: data
-      })
-    })
-    
-  },
-  // 跳转至详情页
-  navigateDetail: function (e) {
-    wx.navigateTo({
-      url: '../do/do?id=' + e.detail.item.id,
-    })
-  
-  },
-  // 加载更多
-  loadMore: function (e) {
-    console.log('加载更多')
-    if (this.data.skillData.length === 0) return
-    var that = this
-    // 由于是模拟数据，加载更多时候，数据重复加载
-   // that.data.skillData = that.data.skillData.concat(that.data.skillData)
-    FyTestSvc.queryTest({ start: 0, count: 10, userId: 1 }, (data) => {
-      that.setData({
-        list: data
-      })
-    })
-  },
-  // 类别选择
-  bindCasPickerChange: function (e) {
-    console.log('Category picker发送选择改变，携带值为', e.detail.value)
+  //事件处理函数  
+  switchRightTab: function(e) {
+    // 获取item项的id，和数组的下标值  
+    let id = e.target.dataset.id,
+      index = parseInt(e.target.dataset.index);
+    // 把点击到的某一项，设为当前index  
     this.setData({
-      casIndex: e.detail.value
-    })
-  },
-  // 地址选择
-  bindAddrPickerChange: function (e) {
-    console.log('Category picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      addrIndex: e.detail.value
-    })
-  },
-wxSearchTab: function () {
-  
-    wx.redirectTo({
-      url: '../test/search'
+      curNav: id,
+      curIndex: index
     })
   }
 
