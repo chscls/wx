@@ -1,0 +1,10 @@
+<!--components/news/common.wxml-->
+<!--components/news/lunbo.wxml-->
+ <view class="container">
+ <view style="flex: 0 0 50%;height:50px;" >
+  <view class="about-u-1of3">走进智兔</view>
+   <view class="about-u-1of2">探索美好></view>
+  </view>
+ <image style="height:200px;padding:10px;width: 100%;" src="../../images/newmember.jpg"  mode="scaleToFill" />
+     
+</view>

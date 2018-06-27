@@ -35,6 +35,7 @@
   <image style="padding:10px;width: 100%;" class="slide-image" mode="scaleToFill" src="../../images/newmember.jpg" />
   </view>
 
+
  <view class="abouts">
  <view style="flex: 0 0 50%;height:50px;" >
   <view class="about-u-1of3">走进智兔</view>
@@ -43,7 +44,8 @@
   <image style="flex: 0 0 50%;height:50px;" class="slide-image" mode="aspectFit" src="../../images/shijuan.png" />
   </view>
  
-
+<lunbo/>
+<common/>
   <form wx:if="{{!isRegister}}" bindsubmit="formSubmit" bindreset="formReset">
     <view class="section">
       <view class="section__title">姓名</view>

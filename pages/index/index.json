@@ -2,6 +2,8 @@
   "navigationBarTitleText": "智兔©",
   "component": false,
   "usingComponents": {
-    "single":"../../components/single/single"
+    "single":"../../components/single/single",
+    "lunbo": "../../components/news/lunbo",
+    "common": "../../components/news/common"
   }
 }
