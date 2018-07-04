@@ -1,5 +1,5 @@
 var stringify = require('../libs/qs/stringify.js');
-var rootDocment = 'https://fang.zymoocs.com';
+var rootDocment = 'https://www.zymoocs.com/ptd';
 var header = {
   'Accept': 'application/json',
   'content-type': 'application/x-www-form-urlencoded',
