@@ -5,8 +5,7 @@
  
  
  <view wx:else> 
-<text wx:if="{{!testRecord.questions[testRecord.answers[current].index].isRich}}">{{testRecord.questions[testRecord.answers[current].index].title}}</text>
-<rich-text wx:else nodes="{{testRecord.questions[testRecord.answers[current].index].title}}" ></rich-text>
+
 
 <single wx:if="{{testRecord.questions[testRecord.answers[current].index].type=='single'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
@@ -20,9 +19,9 @@
 
 <fill  wx:elif="{{testRecord.questions[testRecord.answers[current].index].type=='fill'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}"  bindchange="change"/>
 
+<ask wx:elif="{{testRecord.questions[testRecord.answers[current].index].type=='ask'}}" question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
-
-<ask wx:else question="{{currentQuestion}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
+<synthesis wx:else question="{{testRecord.questions[testRecord.answers[current].index]}}" index="{{current}}" answer="{{answers[current]==null?defaultAnswer:answers[current]}}" bindchange="change"/>
 
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="next" hover-class="other-button-hover"> {{btn}}</button>

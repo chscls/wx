@@ -1,0 +1,28 @@
+<!--components/Single.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+
+    <view >
+      <text wx:if="{{!question.isRich}}">{{question.title}}</text>
+<rich-text wx:else nodes="{{question.title}}" ></rich-text>
+
+  <block wx:for="{{question.subQuestions}}" wx:key="item.id" wx:for-index="index" >
+
+      <single wx:if="{{item.type=='single'}}" question="{{item}}" index="{{index}}" answer="{{answer.subAnswers[index]}}" />
+
+
+      <mutiply wx:if="{{item.type=='mutiply'}}" question="{{item}}" index="{{index}}" answer="{{answer.subAnswers[index]}}" />
+
+      <judge wx:if="{{item.type=='judge'}}" question="{{item}}" index="{{index}}" answer="{{answer.subAnswers[index]}}" />
+
+      <fill wx:if="{{item.type=='fill'}}" question="{{item}}" index="{{index}}" answer="{{answer.subAnswers[index]}}" />
+
+
+
+
+      <ask wx:if="{{item.type=='ask'}}" question="{{item}}" index="{{index}}" answer="{{question.answer.answers[index]}}" />
+
+
+
+    </block>
+    
+     </view>

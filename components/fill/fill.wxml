@@ -1,6 +1,8 @@
 <!--components/Single.wxml-->
 
     <view>
+  <text wx:if="{{!question.isRich}}">{{question.title}}</text>
+<rich-text wx:else nodes="{{question.title}}" ></rich-text>
 
   <label class="fill" wx:for="{{question.items}}" wx:key="{{question.id}}">
     <view> 

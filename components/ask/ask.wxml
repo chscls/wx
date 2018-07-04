@@ -2,7 +2,9 @@
 
 
     <view> 
-   
+     <text wx:if="{{!question.isRich}}">{{question.title}}</text>
+<rich-text wx:else nodes="{{question.title}}" ></rich-text>
+
      <textarea bindblur="bindTextAreaBlur" bindinput="inputChange"  auto-height placeholder="请输入答案" />
      </view>
 

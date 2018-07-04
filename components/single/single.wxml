@@ -2,6 +2,10 @@
 <wxs src="../../utils/util.wxs" module="util" />
 
     <view>
+    <text wx:if="{{!question.isRich}}">{{question.title}}</text>
+<rich-text wx:else nodes="{{question.title}}" ></rich-text>
+
+
 <radio-group class="radio-group" bindchange="radioChange">
   <label class="radio" wx:for="{{answer.orders}}" wx:key="{{question.id}}">
     <view> <radio value="{{item}}" checked="{{answer.indexs[0]==item}}"/>

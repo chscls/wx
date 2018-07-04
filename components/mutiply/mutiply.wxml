@@ -1,5 +1,9 @@
 <!--components/Single.wxml-->
 <wxs src="../../utils/util.wxs" module="util" />
+<view>
+  <text wx:if="{{!question.isRich}}">{{question.title}}</text>
+<rich-text wx:else nodes="{{question.title}}" ></rich-text>
+
 <checkbox-group bindchange="checkboxChange">
   <label class="checkbox" wx:for="{{answer.orders}}" wx:key="{{item}}">
     <view><checkbox value="{{item}}" checked="{{util.contain(answer.indexs,item) }}"/>{{util.numberToChar(index) }}.
@@ -12,4 +16,5 @@
     </view>
   </label>
 </checkbox-group>
+</view>
 
