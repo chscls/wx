@@ -33,6 +33,7 @@ Page({
           
           this.setData({
             testRecord: data,
+            btn: data.questions.length == 1 ? "提交" : "下一题",
             answers: a
           });
         } else {
@@ -41,6 +42,7 @@ Page({
           wx.setStorageSync(data.uuid, b);
           this.setData({
             testRecord: data,
+            btn: data.questions.length==1?"提交":"下一题",
             answers: b
           });
         }
@@ -48,6 +50,7 @@ Page({
         var b = data.answers
         this.setData({
           testRecord: data,
+          btn: data.questions.length == 1 ? "提交" : "下一题",
           answers: b
         });
       }
